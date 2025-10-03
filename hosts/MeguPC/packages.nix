@@ -7,7 +7,7 @@
 #host regular packages
 {
     imports = [
-
+        ../../modules/ollama.nix
     ];
 
     environment.systemPackages = with pkgs; [
