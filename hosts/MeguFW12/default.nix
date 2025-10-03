@@ -11,6 +11,12 @@
 	./packages.nix
 	];
 
+	#Config for tablet mode
+  boot.initrd.kernelModules = [ "pinctrl_tigerlake" ]; 
+  hardware.sensor.iio.enable = lib.mkDefault true;
+	#framework update
+  services.fwupd.enable = true;
+
 # 	  # Bootloader.
 # 	  boot.loader.grub.enable = true;
 # 	  boot.loader.grub.device = "/dev/sda";
