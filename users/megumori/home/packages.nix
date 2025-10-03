@@ -11,7 +11,7 @@
     ../../../homeModules/vscode.nix
     ../../../homeModules/obs.nix
     ../../../homeModules/syncthing.nix
-  #  ../../../homeModules/nixvim.nix
+    ../../../homeModules/nixvim.nix
 
     ];
 

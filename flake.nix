@@ -16,7 +16,11 @@
         inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helix.url = "github:helix-editor/helix/master";
+    nixvim = {
+        url = "github:nix-community/nixvim/nixos-25.05";
+        # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
