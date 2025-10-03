@@ -23,6 +23,10 @@
           id = "I4P2RVU-O3Z64HD-LYEVGZK-SVR2G2V-7U7C3L5-VSU4NKB-AL3PHPA-I2PFXQA";
           name = "MeguPC";
         };
+        MeguServer = {
+          id = "KFIV4K7-ZCCFTYN-YPQQMWU-OEVSOY3-OBA4QSB-CR6WCQF-WDAZTIM-PVS42AZ";
+          name = "MeguServer";
+        };
       };
 
       folders = {
@@ -32,6 +36,7 @@
             "MeguPhone"
             "MeguFW12"
             "MeguPC"
+            "MeguServer"
           ];
         };
 
@@ -46,6 +51,7 @@
           path = "~/sync/uni";
           devices = [
             "MeguFW12"
+            "MeguServer"
           ];
         };
       };
