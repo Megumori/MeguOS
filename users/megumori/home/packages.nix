@@ -12,7 +12,7 @@
     ../../../homeModules/obs.nix
     ../../../homeModules/syncthing.nix
     ../../../homeModules/nixvim.nix
-
+    ../../../homeModules/vicinae.nix
     ];
 
 }

@@ -50,8 +50,6 @@
     bitwarden-desktop
     vlc
     obs-studio
-    # syncthing
-    # syncthingtray
 
     #vpn
     protonvpn-gui
