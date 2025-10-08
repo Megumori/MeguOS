@@ -21,7 +21,4 @@
     ];
 
   };
-
-  services.tailscale.enable = true;
-  
 }

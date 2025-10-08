@@ -1,6 +1,11 @@
 {
   description = "MeguFlake";
 
+  nixConfig = {
+    extra-substituters = [ "https://vicinae.cachix.org" ];
+    extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
+  };
+
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -25,8 +30,6 @@
 
     vicinae = {
       url = "github:vicinaehq/vicinae";
-      extra-substituters = [ "https://vicinae.cachix.org" ];
-      extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
     };
 
   };
@@ -34,6 +37,8 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
 
     nixosConfigurations = {
+
+      
 
       MeguPC = nixpkgs.lib.nixosSystem {
           specialArgs = {
