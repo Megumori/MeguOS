@@ -19,11 +19,5 @@
     ntfs3g
     unityhub
 
-    #Razer shit n camera
-    openrazer-daemon
-    polychromatic
-    cameractrls-gtk4
-
-
     ];
 }
