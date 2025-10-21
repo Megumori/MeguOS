@@ -13,6 +13,7 @@
     ../../../homeModules/syncthing.nix
     ../../../homeModules/nixvim.nix
     ../../../homeModules/vicinae.nix
+    ../../../homeModules/vesktop.nix
     ];
 
 }

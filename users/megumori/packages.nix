@@ -22,9 +22,6 @@
     #messaging
     signal-desktop
     telegram-desktop
-    (discord.override {
-    withVencord = true;
-    })
 
     #uni
     anki-bin
