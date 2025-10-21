@@ -2,8 +2,15 @@
   description = "MeguFlake";
 
   nixConfig = {
-    extra-substituters = [ "https://vicinae.cachix.org" ];
-    extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
+    extra-substituters = [
+       "https://vicinae.cachix.org" #Vicinae
+       "https://ezkea.cachix.org"  #aagl
+    ];
+    extra-trusted-public-keys = [
+       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" 
+       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+    ];
+
   };
 
   inputs = {
@@ -34,14 +41,17 @@
       url = "github:vicinaehq/vicinae";
     };
 
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
 
     nixosConfigurations = {
-
       
-
       MeguPC = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
