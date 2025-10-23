@@ -21,6 +21,10 @@
       UserMessagesPronouns.enabled = lib.mkDefault true;
       NoProfileThemes.enabled = lib.mkDefault true;
       AlwaysExpandRoles.enabled = lib.mkDefault true;
+      VolumeBooster = {
+        enabled = lib.mkDefault true;
+        multiplier = 5;
+      };
     };
 
   };

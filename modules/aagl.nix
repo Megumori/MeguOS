@@ -11,6 +11,6 @@
     inputs.aagl.nixosModules.default
   ];
 
-  programs.anime-games-launcher.enable = true;
+  programs.honkers-railway-launcher.enable = true;
 
 }
