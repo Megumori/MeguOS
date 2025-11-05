@@ -9,6 +9,7 @@
   programs.vesktop = {
     enable = true;
     settings = {
+      autoStartMinimized = true;
       arRPC = true;
       disableMinSize = true;
       hardwareAcceleration = true;
