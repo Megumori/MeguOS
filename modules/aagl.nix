@@ -10,7 +10,7 @@
   imports = [
     inputs.aagl.nixosModules.default
   ];
-
-  programs.honkers-railway-launcher.enable = true;
+  # programs.honkers-railway-launcher.enable = true;
+  # programs.anime-games-launcher.enable = true;
 
 }
