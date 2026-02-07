@@ -35,16 +35,12 @@
          device = "/dev/disk/by-uuid/400fdfd6-e31e-4ead-b02c-8ad1d6b89ac4";
          allowDiscards = true;
          keyFileSize = 4096;
-         # pinning to /dev/disk/by-id/usbkey works
          keyFile = "/dev/sdb";
-         # optionally enable fallback to password in case USB is lost
          fallbackToPassword = true;
       };
   };
 
-
-
-	swapDevices = [{  #debatably needed as I also have the swap partition lmao
+	swapDevices = [{  
     device = "/var/lib/swapfile";
     size = 16 * 1024; # 16GB
   }];
