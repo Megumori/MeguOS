@@ -12,22 +12,39 @@
 	];
 
 	    # automount C & E drives
-	fileSystems."/run/media/leo/m2" = {
-		device = "/dev/disk/by-uuid/867E40A37E408DBD";
-		fsType = "ntfs-3g";
-		options = ["nofail"];
-	};
+	# fileSystems."/run/media/leo/m2" = {
+	# 	device = "/dev/disk/by-uuid/867E40A37E408DBD";
+	# 	fsType = "ntfs-3g";
+	# 	options = ["nofail"];
+	# };
 	fileSystems."/run/media/leo/sata" = {
 		device = "/dev/disk/by-uuid/C6D060FCD060F459";
 		fsType = "ntfs-3g";
 		options = ["nofail"];
 	};
-	fileSystems."/run/media/leo/secure" = {
-		device = "/dev/disk/by-uuid/d543b4a2-96d3-4f7c-8e10-c052360edd39";
-		options = ["nofail"];
-	};
+	# fileSystems."/run/media/leo/secure" = {
+	# 	device = "/dev/disk/by-uuid/d543b4a2-96d3-4f7c-8e10-c052360edd39";
+	# 	options = ["nofail"];
+	# };
 
-	swapDevices = [{
+	# Needed to find the USB device during initrd stage
+  boot.initrd.kernelModules = [ "usb_storage" ]; 
+
+  boot.initrd.luks.devices = {
+      luksroot = {
+         device = "/dev/disk/by-uuid/400fdfd6-e31e-4ead-b02c-8ad1d6b89ac4";
+         allowDiscards = true;
+         keyFileSize = 4096;
+         # pinning to /dev/disk/by-id/usbkey works
+         keyFile = "/dev/sdb";
+         # optionally enable fallback to password in case USB is lost
+         fallbackToPassword = true;
+      };
+  };
+
+
+
+	swapDevices = [{  #debatably needed as I also have the swap partition lmao
     device = "/var/lib/swapfile";
     size = 16 * 1024; # 16GB
   }];
