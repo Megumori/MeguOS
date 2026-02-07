@@ -4,7 +4,13 @@
 	imports = [
 	./hardware-configuration.nix
 	./packages.nix
+	../../modules/locale-gb_fi.nix
 	];
+
+	boot.loader = {
+		systemd-boot.enable = true;
+		efi.canTouchEfiVariables = true;
+	};
 
 	# Needed to find the USB device during initrd stage
 	boot.initrd.kernelModules = [ "usb_storage" ]; 
@@ -47,4 +53,5 @@
 	hardware.openrazer.enable = true;
 
 	nixpkgs.config.allowUnfree = true;
+	
 }

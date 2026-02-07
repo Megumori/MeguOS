@@ -50,6 +50,7 @@
           modules = [
             { networking.hostName = "MeguPC"; }
             ./configuration.nix
+            ./nixconfig
             ./hosts/MeguPC
             ./users/megumori
 
@@ -79,6 +80,7 @@
           modules = [
             { networking.hostName = "MeguFW12"; }
             ./configuration.nix
+            ./nixconfig
             ./hosts/MeguFW12
             ./users/megumori
 

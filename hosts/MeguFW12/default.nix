@@ -4,7 +4,13 @@
 	imports = [
 	./hardware-configuration.nix
 	./packages.nix
+	../../modules/locale-gb_fi.nix
 	];
+
+	boot.loader = {
+		systemd-boot.enable = true;
+		efi.canTouchEfiVariables = true;
+	};
 
 	#Config for tablet mode
   boot.initrd.kernelModules = [ "pinctrl_tigerlake" ]; 
@@ -36,6 +42,6 @@
 	};
 	services.blueman.enable = true;
 
-#
-	  nixpkgs.config.allowUnfree = true;
-	}
+	nixpkgs.config.allowUnfree = true;
+	
+}
