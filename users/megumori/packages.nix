@@ -15,7 +15,6 @@
   services.tailscale.enable = true;
   
   users.users.megumori.packages = with pkgs; [
-    ungit
 
 
     #messaging
@@ -24,10 +23,10 @@
 
     #uni
     anki-bin
-    mpv
+    mpv #needed for anki audio
     xournalpp
     python314
-    jetbrains.pycharm-community-bin
+    jetbrains.pycharm-oss
 
     #gaming
     prismlauncher

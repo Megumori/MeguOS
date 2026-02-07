@@ -1,17 +1,7 @@
 {
   description = "MeguFlake";
 
-  nixConfig = {
-    extra-substituters = [
-       "https://vicinae.cachix.org" #Vicinae
-       "https://ezkea.cachix.org"  #aagl
-    ];
-    extra-trusted-public-keys = [
-       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" 
-       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
-    ];
-
-  };
+  
 
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
@@ -72,7 +62,8 @@
                   inherit inputs;
                 };
                 users.megumori.imports = [
-                ./users/megumori/home
+                  ./hosts/MeguPC/home
+                  ./users/megumori/home
                 ];
               };
 
@@ -100,7 +91,8 @@
                   inherit inputs;
                 };
                 users.megumori.imports = [
-                ./users/megumori/home
+                  ./hosts/MeguFW12/home
+                  ./users/megumori/home
                 ];
               };
 

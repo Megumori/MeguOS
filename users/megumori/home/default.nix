@@ -20,8 +20,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Megumori";
-    userEmail = "morialeo@proton.me";
+    settings = {
+      user = {
+        name = "Megumori";
+        email = "morialeo@proton.me";
+      };
+    };
   };
 
 }

@@ -1,35 +1,9 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
-#let
- # aagl = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-25.05.tar.gz");
-#in
+
 {
-
-
-
-  imports =
-    [ # Include the results of the hardware scan.
-     # ./hardware-configuration.nix
-    #  aagl.module
-    ];
-
-   # nix.settings = aagl.nixConfig; # Set up Cachix
-  #programs.anime-game-launcher.enable = true;
-  #programs.anime-games-launcher.enable = true;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-#   networking.hostName = "MeguPC"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -86,44 +60,11 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
-
-  # automount C & E drives
-#   fileSystems."/run/media/leo/m2" = {
-#     device = "/dev/disk/by-uuid/867E40A37E408DBD";
-#     fsType = "ntfs-3g";
-#     options = ["nofail"];
-#   };
-#   fileSystems."/run/media/leo/sata" = {
-#     device = "/dev/disk/by-uuid/C6D060FCD060F459";
-#     fsType = "ntfs-3g";
-#     options = ["nofail"];
-#   };
-#   fileSystems."/run/media/leo/secure" = {
-#     device = "/dev/disk/by-uuid/d543b4a2-96d3-4f7c-8e10-c052360edd39";
-#     options = ["nofail"];
-#   };
-
 
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-#   users.users.leo = {
-#     isNormalUser = true;
-#     description = "Leo";
-#     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
-#     packages = with pkgs; [
-#       kdePackages.kate
-#     ];
-#   };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -134,116 +75,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
- #   ungit
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    ntfs3g
-  #  vscode-fhs
-    dotnet-sdk_9
-    dotnet-runtime_9
-  #  vscode-extensions.ms-dotnettools.csharp
-  #  unityhub
-
-#     signal-desktop
-#     telegram-desktop
-#     (discord.override {
-#     withVencord = true;
-#     })
-#    obs-studio
-#    wine
-#    obsidian
-
- #   komikku
-
- #   lutris
-#    prismlauncher
-  #not actually moved \/
-#     jdk8
-#     jdk17
-#     jdk21
-
- #   syncthing
- #   syncthingtray
- #   firefox-devedition
- #   inputs.zen-browser.packages."${system}".default
- #   bitwarden-desktop
- #   haruna
- #   anki-bin
- #   mpv  #dependency to play audio on anki cards
- #   krita
-#    libreoffice-qt6-fresh
- #   vlc
-
- #   moonlight-qt
-    parsec-bin
-
- #   protonvpn-gui
- #   wireguard-tools
-
-    # Uni stuff
-#     xournalpp
-#     python314
-#     jetbrains.pycharm-community-bin
-
-#     openrazer-daemon
-#     polychromatic
-#     cameractrls-gtk4
-  ];
-#  hardware.openrazer.enable = true;
-
-  # Apparently needed for protonvpn to work
-#  networking.firewall.checkReversePath = false;
-
-#   programs.steam.enable = true;
-#  programs.obs-studio.enableVirtualCamera = true;
-
-#  programs.kdeconnect.enable = true;
-
-
-
-
-
-  #services.tailscale.enable = true;
-
-  # services.sunshine = {
-  #   enable = true;
-  #   autoStart = true;
-  #   capSysAdmin = true;
-  #   openFirewall = true;
-  # };
-
-  # networking.firewall = {
-  #   enable = true;
-  #   allowedTCPPorts = [ 47984 47989 47990 48010 ];
-  #   allowedUDPPortRanges = [
-  #     { from = 47998; to = 48000; }
-  #     { from = 8000; to = 8010; }
-  # ];
-  # };
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
