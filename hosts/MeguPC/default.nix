@@ -4,7 +4,11 @@
 	imports = [
 	./hardware-configuration.nix
 	./packages.nix
+
 	../../modules/locale-gb_fi.nix
+
+	../../modules/sddm.nix
+	../../modules/plasma.nix
 	];
 
 	boot.loader = {
