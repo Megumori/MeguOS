@@ -1,18 +1,17 @@
 {
-    inputs,
-    config,
-    pkgs,
-    ...
+  inputs,
+  config,
+  pkgs,
+  ...
 }:
 #host regular packages
 {
-    imports = [
-        ../../modules/aagl.nix
-    ];
+  imports = [
+     ../../modules/aagl.nix
+  ];
 
-    environment.systemPackages = with pkgs; [
-
-    ntfs3g
+  environment.systemPackages = with pkgs; [
+  	ntfs3g
     unityhub
 
     # Bulk upload my backups
@@ -24,5 +23,5 @@
     cameractrls-gtk4
 
 
-    ];
+  ];
 }

@@ -1,19 +1,19 @@
 {
-    inputs,
-    config,
-    pkgs,
-    ...
+  inputs,
+  config,
+  pkgs,
+  ...
 }:
 #user home packages
 {
-    imports = [
-    ../../../homeModules/zenbrowser.nix
-    ../../../homeModules/vscode.nix
-    ../../../homeModules/obs.nix
+  imports = [
+  	../../../homeModules/zenbrowser.nix
+  	../../../homeModules/vscode.nix
+  	../../../homeModules/obs.nix
     ../../../homeModules/syncthing.nix
     ../../../homeModules/nixvim.nix
     ../../../homeModules/vicinae.nix
     ../../../homeModules/vesktop.nix
-    ];
+  ];
 
 }

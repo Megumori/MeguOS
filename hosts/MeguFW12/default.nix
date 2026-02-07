@@ -9,6 +9,8 @@
 
 	../../modules/sddm.nix
 	../../modules/plasma.nix
+
+	../../modules/plymouth.nix #Boot animation
 	];
 
 	boot.loader = {

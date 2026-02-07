@@ -1,16 +1,16 @@
 {
-    inputs,
-    config,
-    pkgs,
-    ...
+  inputs,
+  config,
+  pkgs,
+  ...
 }:
 #host regular packages
 {
-    imports = [
+  imports = [
 
-    ];
+  ];
 
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
 
     framework-tool
     fw-ectool
@@ -19,5 +19,5 @@
     ntfs3g
     unityhub
 
-    ];
+  ];
 }
