@@ -15,6 +15,10 @@
           id = "6AZN3QI-QCCK6UJ-5RYHRFP-NNRNET6-CMBFP7U-JU26I6S-XIYT2PA-QVBGYQD";
           name = "MeguPhone";
         };
+        MeguPixel = {
+          id = "JD7TYAJ-SJSVYHK-VKPLIBZ-RSPUIEU-MMKC4SD-ATKTA7R-2BPZRDH-ZCOYWQ6";
+          name = "MeguPixel";
+        };
         MeguFW12 = {
           id = "4PICAVK-FTPH5O2-QWUMPW5-IXI6OHG-ENXDD7R-VAHHLLR-QHKHKHP-6HO2DAD";
           name = "MeguFW12";
@@ -34,6 +38,7 @@
           path = "~/sync/obsidian";
           devices = [
             "MeguPhone"
+            "MeguPixel"
             "MeguFW12"
             "MeguPC"
             "MeguServer"
@@ -44,6 +49,7 @@
           path = "~/sync/art/twitter";
           devices = [
             "MeguPhone"
+            "MeguPixel"
           ];
         };
 
