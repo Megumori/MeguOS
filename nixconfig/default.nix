@@ -4,7 +4,7 @@
   pkgs,
   ...
 }:
-
+# Default settings for all machines
 {
   imports = [
     ./fonts.nix

@@ -3,7 +3,7 @@
   pkgs,
   ...
 }:
-
+# Base configs when it comes to the host machine, such as disk encryption etc
 {
   imports = [
   ./hardware-configuration.nix
@@ -42,6 +42,7 @@
 	};
   };
 
+  # Automount 2nd ssd
   fileSystems."/mnt/satassd" = {
 	device = "/dev/disk/by-uuid/42022788-fe4d-409f-a22f-46637c9d7ace";
 	fsType = "ext4";
@@ -53,10 +54,10 @@
   };
 
   swapDevices = [
-	{  
+	  {  
       device = "/var/lib/swapfile";
       size = 16 * 1024; # 16GiB
-	}
+	  }
   ];
 
 

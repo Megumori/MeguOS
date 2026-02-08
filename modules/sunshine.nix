@@ -3,6 +3,7 @@
   pkgs,
   ...
 }:
+# Basic config copied from wiki
 {
   services.sunshine = {
     enable = true;
@@ -17,7 +18,7 @@
     allowedUDPPortRanges = [
       { from = 47998; to = 48000; }
       { from = 8000; to = 8010; }
-  ];
+    ];
   };
 
 

@@ -10,6 +10,8 @@
   imports = [
     inputs.aagl.nixosModules.default
   ];
+
+  # Extra prebuilt cache, since it's not in nixpkgs shockingly enough
   nix.settings = {
     extra-substituters = [
        "https://ezkea.cachix.org" 

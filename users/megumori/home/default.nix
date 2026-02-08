@@ -5,18 +5,20 @@
   specialArgs,
   ...
 }:
-
+# Basic home manager configs
 {
   imports = [
   ./packages.nix
   ];
 
-  home.username = "megumori";
-  home.homeDirectory = "/home/megumori";
-  home.stateVersion = "25.05";
-
-
   programs.home-manager.enable = true;
+
+  home = {
+    username = "megumori";
+    homeDirectory = "/home/megumori";
+    stateVersion = "25.05"; # Original state version, read more in ./nixconfig/default.nix
+  };
+
 
   programs.git = {
     enable = true;

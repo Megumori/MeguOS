@@ -5,7 +5,7 @@
   inputs,
   ...
 }:
-
+# Basic services for all machines
 {
   services = {
     printing.enable = true;

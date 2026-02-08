@@ -5,6 +5,7 @@
   inputs,
   ...
 }:
+# Define the user, import the other stuff
 {
   imports = [
     ./networking.nix
