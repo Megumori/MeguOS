@@ -18,12 +18,9 @@
         proton-ge-bin
       ];
     };
-    #Window manager shenanigans, don't worry about it
-#     gamescope = {
-#       enable = true;
-#       capSysNice = true;
-#     };
+
   };
+  
   #Make it so steam works even with allow unfree packages disabled
   nixpkgs.config.allowUnfreePredicate =
     pkg:

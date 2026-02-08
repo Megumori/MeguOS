@@ -5,6 +5,7 @@
   inputs,
   ...
 }:
+# Locale settings, change stuff or make a new copy for different locales/layouts
 {
   time.timeZone = lib.mkDefault "Europe/Helsinki";
 

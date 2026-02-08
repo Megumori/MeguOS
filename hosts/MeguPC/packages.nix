@@ -7,11 +7,10 @@
 #host regular packages
 {
   imports = [
-     ../../modules/aagl.nix
+
   ];
 
   environment.systemPackages = with pkgs; [
-  	ntfs3g
     unityhub
 
     # Bulk upload my backups

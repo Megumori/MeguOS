@@ -5,15 +5,14 @@
   inputs,
   ...
 }:
-#user regular packages
+#user nix packages
 {
-  imports = [
+  imports = [ # custom modules
   ../../modules/steam.nix
   ../../modules/sunshine.nix
   ];
-
-  services.tailscale.enable = true;
   
+  # Remember to change name
   users.users.megumori.packages = with pkgs; [
 
 
@@ -49,8 +48,6 @@
     #vpn
     protonvpn-gui
     wireguard-tools
-
-
-    wget
+    
   ];
 }

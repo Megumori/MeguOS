@@ -6,14 +6,15 @@
 }:
 #user home packages
 {
-  imports = [
+  imports = [ # Custom modules
   	../../../homeModules/zenbrowser.nix
   	../../../homeModules/vscode.nix
   	../../../homeModules/obs.nix
-    ../../../homeModules/syncthing.nix
     ../../../homeModules/nixvim.nix
     ../../../homeModules/vicinae.nix
     ../../../homeModules/vesktop.nix
   ];
+
+  # Could have home packages down here
 
 }
