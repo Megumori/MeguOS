@@ -17,7 +17,7 @@
 		systemd-boot.enable = true;
 		efi.canTouchEfiVariables = true;
 	};
-
+	
 	#Config for tablet mode
   boot.initrd.kernelModules = [ "pinctrl_tigerlake" ]; 
   hardware.sensor.iio.enable = lib.mkDefault true;
