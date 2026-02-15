@@ -53,6 +53,8 @@
 	];
   };
 
+  zramSwap.enable = true;
+
   swapDevices = [
 	  {  
       device = "/var/lib/swapfile";
@@ -64,5 +66,14 @@
   hardware.openrazer.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  # NFS setup
+  boot.supportedFilesystems = [ "nfs" ];
+  fileSystems."/mnt/Jellyfin" = {
+    device = "192.168.10.204:/Jellyfin";
+    fsType = "nfs";
+  };
+
+
 	
 }
