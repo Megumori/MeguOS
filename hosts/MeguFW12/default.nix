@@ -21,6 +21,9 @@
 	#Config for tablet mode
   boot.initrd.kernelModules = [ "pinctrl_tigerlake" ]; 
   hardware.sensor.iio.enable = lib.mkDefault true;
+
+	zramSwap.enable = true;
+
 	#framework update
   services.fwupd.enable = true;
 
