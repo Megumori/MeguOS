@@ -9,6 +9,7 @@
 {
   imports = [
   ./packages.nix
+  inputs.catppuccin.homeModules.catppuccin
   ];
 
   programs.home-manager.enable = true;
@@ -29,5 +30,26 @@
       };
     };
   };
+
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "lavender";
+    vesktop.enable = false;
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "catppuccin-mocha-lavender-compact";
+      package = pkgs.catppuccin-gtk.override {
+        variant = "mocha";
+        size = "compact";
+        accents = [ "lavender" ];
+      };
+    };
+  };
+  dconf.enable = true;
 
 }

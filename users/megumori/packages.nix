@@ -37,6 +37,8 @@
     #Tech shenanigans
     moonlight-qt
     wine
+    wget
+    unzip
 
     #general
     libreoffice-qt

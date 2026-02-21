@@ -20,6 +20,6 @@
       "wheel"
       "openrazer"
     ];
-
   };
+
 }
