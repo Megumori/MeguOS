@@ -13,6 +13,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin = {
+      url = "github:catppuccin/nix";
+    };
+
+    comic-code-ligatures-nerd-font = {
+      url = "github:juliuskreutz/ComicCodeLigaturesNerdFont";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
