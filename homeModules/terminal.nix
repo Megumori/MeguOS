@@ -11,10 +11,7 @@
     fishPlugins.grc
     fishPlugins.z
     grc
-    microfetch #Just for comparison, REMOVE THIS LATER
   ];
-
-  #catppuccin.foot.enable = lib.mkForce false;
 
   programs = {
     fish = {

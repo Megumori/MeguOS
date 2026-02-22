@@ -1,4 +1,6 @@
-{ ... }:
+{
+  ...
+}:
 {
   imports = [ ./fastfetch.nix ];
 }
