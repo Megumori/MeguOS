@@ -11,7 +11,7 @@
       logo =
       {
         source = ./meowgayge.png;
-        type = "chafa";
+        type = "sixel";
         padding =
         {
           top = 1;
