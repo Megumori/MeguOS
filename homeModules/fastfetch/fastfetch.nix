@@ -48,7 +48,8 @@
           key = "{#}{##FFFFFF}  Uptime         ";
         }
         {
-          type = "de";
+          type = "command";
+          text = "echo $XDG_CURRENT_DESKTOP";
           key = "{#}{##FFFFFF}󰇄  Desktop        ";
         }
         {
