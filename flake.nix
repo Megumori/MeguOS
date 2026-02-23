@@ -22,6 +22,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    minecraft-plymouth = {
+      url = "github:nikp123/minecraft-plymouth-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";

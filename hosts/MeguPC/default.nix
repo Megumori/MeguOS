@@ -14,7 +14,8 @@
   ../../modules/sddm.nix
   ../../modules/plasma.nix
 
-  ../../modules/plymouth.nix #Boot animation
+  #../../modules/plymouth.nix #Boot animation
+  ../../modules/minecraftboot
   ];
 
   boot = {
@@ -52,13 +53,13 @@
 
   # Automount 2nd ssd
   fileSystems."/mnt/satassd" = {
-	device = "/dev/disk/by-uuid/42022788-fe4d-409f-a22f-46637c9d7ace";
-	fsType = "ext4";
-	options = [
-	  "users"
-	  "nofail"
-	  "exec"
-	];
+    device = "/dev/disk/by-uuid/42022788-fe4d-409f-a22f-46637c9d7ace";
+    fsType = "ext4";
+    options = [
+      "users"
+      "nofail"
+      "exec"
+    ];
   };
 
   zramSwap.enable = true;
