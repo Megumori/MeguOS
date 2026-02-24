@@ -13,10 +13,21 @@
 	../../modules/plymouth.nix #Boot animation
 	];
 
-	boot.loader = {
-		systemd-boot.enable = true;
-		efi.canTouchEfiVariables = true;
+	boot = {
+		loader = {
+			grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+      };
+			efi.canTouchEfiVariables = true;
+		};
+
+		initrd = {
+			systemd.enable = true; # Enables password fallback for the encrypted devices (maybe some other stuff too idk)
+		};
 	};
+		
 	
 	#Config for tablet mode
   boot.initrd.kernelModules = [ "pinctrl_tigerlake" ]; 

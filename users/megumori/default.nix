@@ -10,6 +10,7 @@
   imports = [
     ./networking.nix
     ./packages.nix
+    inputs.catppuccin.nixosModules.catppuccin
   ];
 
   users.users.megumori = {
@@ -20,6 +21,12 @@
       "wheel"
       "openrazer"
     ];
+  };
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "lavender";
   };
 
 }
