@@ -14,7 +14,6 @@
     ../../../homeModules/vicinae.nix
     ../../../homeModules/vesktop.nix
     ../../../homeModules/terminal.nix
-    # May make this more permanent, we shall see
     ../../../homeModules/fastfetch
   ];
 

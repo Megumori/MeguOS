@@ -12,6 +12,7 @@
       autoStartMinimized = true;
       arRPC = true;
       disableMinSize = true;
+      tray = false;
       hardwareAcceleration = true;
     };
 

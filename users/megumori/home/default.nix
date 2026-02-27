@@ -38,7 +38,7 @@
     accent = "lavender";
     vesktop.enable = false;
   };
-
+  # catppuccin/nix may say it can configure gtk but this is a lie, don't believe it
   gtk = {
     enable = true;
     theme = {
@@ -49,6 +49,7 @@
         accents = [ "lavender" ];
       };
     };
+    gtk2.force = true;
   };
   dconf.enable = true;
 

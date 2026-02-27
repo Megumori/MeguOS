@@ -9,6 +9,11 @@
   imports = [
     inputs.nixvim.homeModules.nixvim
   ];
+  # Add this to flake.nix inputs:
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   
   programs.nixvim = {
     enable = true;

@@ -7,7 +7,10 @@
   imports = [
     inputs.vicinae.homeManagerModules.default
   ];
-
+  # Add this to flake.nix inputs:
+    # vicinae = {
+    #   url = "github:vicinaehq/vicinae";
+    # };
   # Prebuilt cache so I don't have to rebuild each time
   nix.settings = {
     extra-substituters = [

@@ -6,11 +6,15 @@
   ...
 }:
 {
-
   imports = [
     inputs.aagl.nixosModules.default
   ];
-
+  # Add this to flake.nix inputs:
+    # aagl = {
+    #   url = "github:ezKEa/aagl-gtk-on-nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+  
   # Extra prebuilt cache, since it's not in nixpkgs shockingly enough
   nix.settings = {
     extra-substituters = [

@@ -19,6 +19,7 @@
     #messaging
     signal-desktop
     telegram-desktop
+    fluffychat
 
     #uni
     anki-bin
