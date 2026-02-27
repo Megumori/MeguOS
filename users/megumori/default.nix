@@ -29,4 +29,7 @@
     accent = "lavender";
   };
 
+  services.gnome.gnome-keyring.enable = true;
+  users.users.megumori.packages = with pkgs; [ seahorse ];
+
 }
