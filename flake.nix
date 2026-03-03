@@ -64,6 +64,7 @@
               users.megumori.imports = [
                 ./hosts/MeguPC/home
                 ./hosts/MeguPC/home/syncthing.nix # Picked out separately, because it's specific to this combination of host and user. Another user may or may not want it
+                ./hosts/MeguPC/home/retroarch
                 ./users/megumori/home
               ];
             };
