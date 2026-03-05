@@ -11,6 +11,8 @@
     ./networking.nix
     ./packages.nix
     inputs.catppuccin.nixosModules.catppuccin
+
+    ../../modules/noctaliadesktop.nix
   ];
 
   users.users.megumori = {
@@ -31,5 +33,7 @@
 
   services.gnome.gnome-keyring.enable = true;
   users.users.megumori.packages = with pkgs; [ seahorse ];
+
+  programs.niri.enable = true;
 
 }

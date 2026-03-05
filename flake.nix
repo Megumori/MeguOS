@@ -36,6 +36,11 @@
       url = "github:vicinaehq/vicinae";
     };
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
