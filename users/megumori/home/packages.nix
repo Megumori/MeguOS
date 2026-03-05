@@ -15,8 +15,6 @@
     ../../../homeModules/vesktop.nix
     ../../../homeModules/terminal.nix
     ../../../homeModules/fastfetch
-
-    ../../../homeModules/noctalia.nix
   ];
 
   # Could have home packages down here

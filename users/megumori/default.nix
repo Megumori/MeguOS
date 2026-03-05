@@ -21,7 +21,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "openrazer"
     ];
   };
 

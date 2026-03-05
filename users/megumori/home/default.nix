@@ -51,8 +51,13 @@
     };
     gtk2.force = true;
   };
-  dconf.enable = true;
-
-  xdg.configFile."niri/config.kdl".source = ../config.kdl;
+  dconf = {
+    enable = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
 
 }

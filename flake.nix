@@ -53,24 +53,23 @@
           configName = "MeguPC";
         };
         modules = [
-          { networking.hostName = "MeguPC"; } # Standard set of base config, host config, and user configs
+          { networking.hostName = "MeguPC"; } # Standard set of base config, host config, user configs, and combo specifics
           ./nixconfig
           ./hosts/MeguPC
           ./users/megumori
+          ./hosts/MeguPC/commonUsers/megumori
 
           home-manager.nixosModules.home-manager 
           {
-            home-manager = {        # Same with the home manager modules: host and user
+            home-manager = {        # For the home manager modules: user and combo specifics
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
               };
               users.megumori.imports = [
-                ./hosts/MeguPC/home
-                ./hosts/MeguPC/home/syncthing.nix # Picked out separately, because it's specific to this combination of host and user. Another user may or may not want it
-                ./hosts/MeguPC/home/retroarch
                 ./users/megumori/home
+                ./hosts/MeguPC/commonUsers/megumori/home
               ];
             };
           }
@@ -87,6 +86,7 @@
           ./nixconfig
           ./hosts/MeguFW12
           ./users/megumori
+          ./hosts/MeguFW12/commonUsers/megumori
 
           home-manager.nixosModules.home-manager
           {
@@ -97,9 +97,8 @@
                 inherit inputs;
               };
               users.megumori.imports = [
-                ./hosts/MeguFW12/home
-                ./hosts/MeguFW12/home/syncthing.nix
                 ./users/megumori/home
+                ./hosts/MeguFW12/commonUsers/megumori/home
               ];
             };
           }

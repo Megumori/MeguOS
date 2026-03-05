@@ -17,8 +17,6 @@
     pkgs.nixos-icons
     pkgs.cliphist
     pkgs.xwayland-satellite
-
-    pkgs.gpu-screen-recorder
   ];
 
   programs.noctalia-shell = {
@@ -34,10 +32,6 @@
         }
       ];
       states = {
-        screen-recorder = {
-          enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-        };
         timer = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
@@ -50,21 +44,6 @@
       version = 1;
     };
     pluginSettings = {
-      screen-recorder = {
-        hideInactive = false;
-        directory = "";
-        filenamePattern = "recording_yyyyMMdd_HHmmss";
-        frameRate = 30;
-        audioCodec = "opus";
-        videoCodec = "h264";
-        quality = "high";
-        colorRange = "limited";
-        showCursor = true;
-        copyToClipboard = false;
-        audioSource = "default_output";
-        videoSource = "portal";
-        resolution = "original";
-      };
       timer = {
         compactMode = false;
       };
@@ -177,14 +156,6 @@
             }
 
             {
-              id = "NoctaliaPerformance";
-            }
-
-            {
-              id = "plugin:screen-recorder";
-            }
-
-            {
               id = "VPN";
               displayMode = "onHover";
             }
@@ -195,28 +166,9 @@
             }
 
             {
-              id = "KeyboardLayout";
-              displayMode = "onHover";
-            }
-
-            {
-              id = "Battery";
-              deviceNativePath = "__default__";
-              displayMode = "graphic";
-              hideIfIdle = false;
-              hideIfNotDetected = true;
-            }
-
-            {
               id = "Volume";
               displayMode = "onhover";
               middleClickCommand = "pwvucontrol || pavucontrol";
-            }
-
-            {
-              id = "Bluetooth";
-              displayMode = "onhover";
-              hideIfNotDetected = true;
             }
 
             {
@@ -246,7 +198,7 @@
       };
 
       general = {
-        avatarImage = "/home/penguin/.face";
+        avatarImage = ./meowgayge.png;
         dimmerOpacity = 0.2;
 
         showScreenCorners = false;
@@ -303,18 +255,12 @@
       };
 
       location = {
-        name = "Wuerzburg";
-        weatherEnabled = true;
-        weatherShowEffects = true;
-        useFahrenheit = false;
-        firstDayOfWeek = 1;
-        use12hourFormat = false;
-        showWeekNumberInCalendar = false;
+        weatherEnabled = false;
       };
 
       audio = {
         volumeStep = 5;
-        volumeOverdrive = false;
+        volumeOverdrive = true;
         cavaFrameRate = 60;
         visualizerType = "linear";
         preferredPlayer = "";
@@ -324,7 +270,7 @@
       brightness = {
         brightnessStep = 5;
         enforceMinimum = true;
-        enableDdcSupport = false;
+        enableDdcSupport = true;
       };
 
       colorSchemes = {
@@ -335,12 +281,6 @@
 
       nightLight = {
         enabled = false;
-        forced = false;
-        autoSchedule = true;
-        nightTemp = "4000";
-        dayTemp = "6500";
-        manualSunrise = "06:30";
-        manualSunset = "18:30";
       };
 
       dock = {
@@ -373,7 +313,7 @@
       wallpaper = {
         enabled = true;
         overviewEnabled = true;
-        directory = "/home/penguin/Media/Wallpapers";
+        directory = ""; #Pretend I have a wallpaper lol
         showHiddenFiles = true;
 
         fillMode = "crop";
