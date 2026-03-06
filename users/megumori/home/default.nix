@@ -18,7 +18,7 @@
     username = "megumori";
     homeDirectory = "/home/megumori";
     stateVersion = "25.05"; # Original state version, read more in ./nixconfig/default.nix
-  };
+  }; # CHANGE THIS TO YOUR VALUE IF YOU'RE JUST INSTALLING
 
 
   programs.git = {
