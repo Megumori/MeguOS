@@ -43,6 +43,8 @@
 
     #general
     libreoffice-qt
+    thunar
+    qimgv
     obsidian
     bitwarden-desktop
     vlc

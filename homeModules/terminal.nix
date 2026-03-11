@@ -249,7 +249,7 @@
           initial-window-size-chars = "100x25";
         };
         colors = {
-          alpha = "1";
+          alpha = "0.6";
         };
       };
 

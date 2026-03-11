@@ -24,7 +24,7 @@
           name = "MeguFW12";
         };
         MeguServer = {
-          id = "KFIV4K7-ZCCFTYN-YPQQMWU-OEVSOY3-OBA4QSB-CR6WCQF-WDAZTIM-PVS42AZ";
+          id = "XYJZMSS-6IMTC4J-FGUP3UC-QLURHPU-X727C7A-3RSWOKH-KZSS7CI-FRDKZAD";
           name = "MeguServer";
         };
       };

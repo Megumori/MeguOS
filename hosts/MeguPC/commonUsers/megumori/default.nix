@@ -13,8 +13,12 @@
     "openrazer"
   ];
 
+  programs.niri.enable = true;
+
 
   users.users.megumori.packages = with pkgs; [
     unityhub
   ];
+
+
 }
