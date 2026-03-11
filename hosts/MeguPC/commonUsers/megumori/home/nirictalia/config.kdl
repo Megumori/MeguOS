@@ -83,16 +83,16 @@ cursor {
 }
 binds {
     Ctrl+Alt+Delete { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    MOD+MINUS { set-column-width "-25%"; }
-    MOD+PLUS { set-column-width "+25%"; }
-    MOD+RETURN { center-column; }
-    MOD+SHIFT+MINUS { set-window-height "-25%"; }
-    MOD+SHIFT+PLUS { set-window-height "+25%"; }
-    MOD+ctrl+F { expand-column-to-available-width; }
-    Mod+comma { consume-or-expel-window-left; }
-    Mod+period { consume-or-expel-window-right; }
-    Mod+r { switch-preset-column-width; }
-    Mod+w { toggle-column-tabbed-display; }
+    Mod+Minus { set-column-width "-25%"; }
+    Mod+Plus { set-column-width "+25%"; }
+    Mod+Return { center-column; }
+    Mod+Shift+Minus { set-window-height "-25%"; }
+    Mod+Shift+Plus { set-window-height "+25%"; }
+
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
+    Mod+R { switch-preset-column-width; }
+    Mod+W { toggle-column-tabbed-display; }
 
     XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
     XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
@@ -102,45 +102,49 @@ binds {
     XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
     XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
 
-    super+1 { focus-workspace "browser"; }
-    super+2 { focus-workspace "vesktop"; }
-    super+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+1 { focus-workspace "browser"; }
+    Mod+2 { focus-workspace "vesktop"; }
+    Mod+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 
-    super+Up { focus-window-or-workspace-up; }
-    super+Down { focus-window-or-workspace-down; }
-    super+Left { focus-column-left; }
+    Mod+Up { focus-window-or-workspace-up; }
+    Mod+Down { focus-window-or-workspace-down; }
+    Mod+Left { focus-column-left; }
     Mod+WheelScrollUp { focus-column-left; }
-    super+Right { focus-column-right; }
+    Mod+Right { focus-column-right; }
     Mod+WheelScrollDown { focus-column-right; }
-    super+Shift+Up { move-column-to-workspace-up; }
-    super+Shift+Down { move-column-to-workspace-down; }
+    Mod+Shift+Up { move-column-to-workspace-up; }
+    Mod+Shift+Down { move-column-to-workspace-down; }
 
-    super+Shift+Left { move-column-left; }
+    Mod+Shift+Left { move-column-left; }
     Mod+Shift+WheelScrollUp { move-column-left; }
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+WheelScrollDown { move-column-right; }
 
-    super+Shift+W { set-column-width "100%"; }
-    super+c { close-window; }
+    Mod+Shift+W { set-column-width "100%"; }
+    Mod+C { close-window; }
 
-    super+ctrl+down { focus-monitor-down; }
-    super+ctrl+left { focus-monitor-left; }
-    super+ctrl+right { focus-monitor-right; }
+    Mod+Ctrl+Up { focus-monitor-up; }
+    Mod+Ctrl+Down { focus-monitor-down; }
+    Mod+Ctrl+Left { focus-monitor-left; }
+    Mod+Ctrl+Right { focus-monitor-right; }
 
-    super+ctrl+shift+down { move-column-to-monitor-down; }
-    super+ctrl+shift+left { move-column-to-monitor-left; }
-    super+ctrl+shift+right { move-column-to-monitor-right; }
-    super+ctrl+shift+up { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+Up { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+Down { move-column-to-monitor-down; }
+    Mod+Ctrl+Shift+Left { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+WheelScrollUp { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+Right { move-column-to-monitor-right; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-to-monitor-right; }
     
-    super+ctrl+up { focus-monitor-up; }
-    super+e { spawn "thunar"; }
-    super+H { show-hotkey-overlay; }
-    ctrl+alt+t { spawn "foot"; }
-    super+shift+s { spawn "niri" "msg" "action" "screenshot"; }
-    super+space repeat=false { spawn "vicinae" "toggle"; }
-    super+t { spawn "foot"; }
-    super+shift+t { toggle-window-floating; }
-    super+v { spawn "codium"; }
+    
+
+    Mod+E { spawn "thunar"; }
+    Mod+H { show-hotkey-overlay; }
+    Ctrl+Alt+T { spawn "foot"; }
+    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | satty --filename -"; }
+    Mod+Space repeat=false { spawn "vicinae" "toggle"; }
+    Mod+T { spawn "foot"; }
+    Mod+Shift+T { toggle-window-floating; }
+    Mod+V { spawn "codium"; }
 }
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "syncthing"
@@ -151,6 +155,10 @@ window-rule {
     default-column-width { proportion 0.500000; }
     geometry-corner-radius 5.000000 5.000000 5.000000 5.000000
     clip-to-geometry true
+}
+window-rule {
+    match app-id="satty"
+    open-floating true
 }
 layer-rule { match namespace="^quickshell-wallpaper$"; }
 layer-rule {

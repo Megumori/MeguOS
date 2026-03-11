@@ -41,6 +41,12 @@
     wget
     unzip
 
+    #screenshot
+    grim
+    slurp
+    satty
+    wl-clipboard
+
     #general
     libreoffice-qt
     thunar
