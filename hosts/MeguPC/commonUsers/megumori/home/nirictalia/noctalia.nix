@@ -3,7 +3,6 @@
   pkgs,
   inputs,
   lib,
-  builtins,
   specialArgs,
   ...
 }:
@@ -259,7 +258,7 @@
 
       audio = {
         volumeStep = 5;
-        volumeOverdrive = true;
+        volumeOverdrive = true; # nix-shell -p pavucontrol if it doesn't let you go above 100%
         cavaFrameRate = 60;
         visualizerType = "linear";
         preferredPlayer = "";
@@ -312,21 +311,21 @@
       wallpaper = {
         enabled = true;
         overviewEnabled = true;
-        directory = ""; #Pretend I have a wallpaper lol
+        directory = ../../wallpapers;
         showHiddenFiles = true;
 
         fillMode = "crop";
         fillColor = "#000000";
-        setWallpaperOnAllMonitors = true;
-
-        automationEnabled = true;
-        wallpaperChangeMode = "random";
-        randomIntervalSec = 300;
-
-        transitionDuration = 1500;
-        transitionType = "random";
-        transitionEdgeSmoothness = 0.05;
       };
     };
+  };
+  home.file.".cache/noctalia/wallpapers.json" = {
+    text = builtins.toJSON {
+      wallpapers = {
+        "DP-1" = "${../../wallpapers/togekk0.png}";
+        "HDMI-A-1" = "${../../wallpapers/yenkurl.jpg}";
+      };
+    };
+    force = true;
   };
 }

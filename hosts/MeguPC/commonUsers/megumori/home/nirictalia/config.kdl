@@ -93,14 +93,19 @@ binds {
     Mod+period { consume-or-expel-window-right; }
     Mod+r { switch-preset-column-width; }
     Mod+w { toggle-column-tabbed-display; }
+
     XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
     XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
     XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioPlay { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
+
     XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
     XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+
     super+1 { focus-workspace "browser"; }
     super+2 { focus-workspace "vesktop"; }
     super+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+
     super+Up { focus-window-or-workspace-up; }
     super+Down { focus-window-or-workspace-down; }
     super+Left { focus-column-left; }
@@ -109,19 +114,26 @@ binds {
     Mod+WheelScrollDown { focus-column-right; }
     super+Shift+Up { move-column-to-workspace-up; }
     super+Shift+Down { move-column-to-workspace-down; }
+
     super+Shift+Left { move-column-left; }
-    super+Shift+Right { move-column-right; }
+    Mod+Shift+WheelScrollUp { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+WheelScrollDown { move-column-right; }
+
     super+Shift+W { set-column-width "100%"; }
     super+c { close-window; }
+
     super+ctrl+down { focus-monitor-down; }
     super+ctrl+left { focus-monitor-left; }
     super+ctrl+right { focus-monitor-right; }
+
     super+ctrl+shift+down { move-column-to-monitor-down; }
     super+ctrl+shift+left { move-column-to-monitor-left; }
     super+ctrl+shift+right { move-column-to-monitor-right; }
     super+ctrl+shift+up { move-column-to-monitor-up; }
+    
     super+ctrl+up { focus-monitor-up; }
-    super+e { spawn "dolphin"; }
+    super+e { spawn "thunar"; }
     super+H { show-hotkey-overlay; }
     ctrl+alt+t { spawn "foot"; }
     super+shift+s { spawn "niri" "msg" "action" "screenshot"; }
