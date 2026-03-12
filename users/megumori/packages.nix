@@ -8,8 +8,9 @@
 #user nix packages
 {
   imports = [ # custom modules
-  ../../modules/steam.nix
-  ../../modules/sunshine.nix
+    ../../modules/steam.nix
+    ../../modules/sunshine.nix
+    ../../modules/thunar.nix
   ];
   
   # Remember to change name
@@ -49,7 +50,6 @@
 
     #general
     libreoffice-qt
-    thunar
     qimgv
     obsidian
     bitwarden-desktop

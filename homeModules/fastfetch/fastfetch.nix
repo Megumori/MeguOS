@@ -6,25 +6,23 @@
   programs.fastfetch =
   {
     enable = true;
-    settings =
-    {
-      logo =
-      {
-        source = ./meowgayge.png;
-        type = "sixel";
-        padding =
-        {
+    settings = {
+      logo = {
+        source = ./meowgayge.sixel; # make the image with chafa -f sixels /path/to/image -s 24x10 > /path/to/outout/sixel 
+        type = "raw";
+        padding = {
           top = 1;
           left = 2;
         };
         height = 10;
+        width = 24;
       };
       display = {
         separator = "| ";
       };
       modules =
       [
-        "break"
+        # "break"
         {
           type = "title";
           format = "{##DD2785}{user-name}{##8869A5}@{##2656B4}{host-name}{#} ~ ";
