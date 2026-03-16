@@ -9,5 +9,6 @@
     ./nirictalia
     ./retroarch
     ./syncthing.nix
+    ../../../../../homeModules/vintagestory.nix
   ];
 }

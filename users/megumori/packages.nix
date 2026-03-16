@@ -24,14 +24,13 @@
 
     #uni
     anki-bin
-    mpv #needed for anki audio
+      mpv #needed for anki audio
     xournalpp
     python314
     jetbrains.pycharm-oss
 
     #gaming
     prismlauncher
-    lutris
 
     #art
     krita
