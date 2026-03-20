@@ -32,7 +32,7 @@ assert waylandSupport -> libxkbcommon != null;
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "vintagestory";
-  version = "1.21.6";
+  version = "1.21.6"; # Note this
 
   src = fetchurl {
     url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${finalAttrs.version}.tar.gz";
@@ -101,7 +101,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   postInstall = ''
     cp ${./VintagestoryLib.dll} $out/share/vintagestory/VintagestoryLib.dll
-  ''; # Go find a new dll if game updates
+  ''; # Go find a new dll if you update the game
 
   preFixup =
     let
