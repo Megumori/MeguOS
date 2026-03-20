@@ -5,6 +5,9 @@
 }:
 # Config specific to this user on this host
 {
+  imports = [
+    ../../../../modules/noctaliadesktop.nix
+  ];
   # Monitor brightness adjustment support
   hardware.i2c.enable = true;
   

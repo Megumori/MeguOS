@@ -11,8 +11,6 @@
     ./networking.nix
     ./packages.nix
     inputs.catppuccin.nixosModules.catppuccin
-
-    ../../modules/noctaliadesktop.nix
   ];
 
   users.users.megumori = {
