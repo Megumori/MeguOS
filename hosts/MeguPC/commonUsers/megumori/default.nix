@@ -20,7 +20,7 @@
 
 
   users.users.megumori.packages = with pkgs; [
-    unityhub
+    # unityhub
   ];
 
 

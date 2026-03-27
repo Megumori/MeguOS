@@ -248,7 +248,7 @@
           font = "Comic Code Ligatures Nerd Font:size=11";
           initial-window-size-chars = "100x25";
         };
-        colors = {
+        colors-dark = {
           alpha = "0.93";
         };
       };

@@ -11,4 +11,8 @@
     ./syncthing.nix
     ../../../../../homeModules/vintagestory.nix
   ];
+
+  home.packages = with pkgs; [
+    shticker-book-unwritten
+  ];
 }

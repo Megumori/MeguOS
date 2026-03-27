@@ -139,6 +139,7 @@ binds {
     
 
     Mod+E { spawn "thunar"; }
+    Mod+Z { spawn "zen-beta"; }
     Mod+H { show-hotkey-overlay; }
     Ctrl+Alt+T { spawn "foot"; }
     Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | satty --filename -"; }
@@ -151,6 +152,22 @@ spawn-at-startup "noctalia-shell"
 spawn-at-startup "syncthing"
 spawn-at-startup "vicinae" "server"
 spawn-at-startup "xwayland-satellite"
+
+spawn-at-startup "signal-desktop"
+spawn-at-startup "cinny"
+spawn-at-startup "vesktop"
+spawn-at-startup "Telegram"
+
+window-rule {
+    match app-id="signal-desktop"
+    match app-id="cinny"
+    match app-id="vesktop"
+    match app-id="Telegram"
+
+    open-on-output "HDMI-A-1"
+    default-column-width { proportion 1.0; }
+}
+
 window-rule {
     match
     default-column-width { proportion 0.500000; }
