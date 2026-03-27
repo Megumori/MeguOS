@@ -19,5 +19,7 @@
   ];
 
   # Could have home packages down here
-
+  home.packages = with pkgs; [
+    cinny-desktop
+  ];
 }
