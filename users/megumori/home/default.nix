@@ -10,6 +10,7 @@
   imports = [
   ./packages.nix
   inputs.catppuccin.homeModules.catppuccin
+  inputs.agenix.homeManagerModules.default
   ];
 
   programs.home-manager.enable = true;
@@ -28,7 +29,12 @@
         name = "Megumori";
         email = "morialeo@proton.me";
       };
+      push.autoSetupRemote = true;
     };
+  };
+
+  age = {
+    identityPaths = [ "/home/megumori/.ssh/id_ed25519" ];
   };
 
 
