@@ -4,17 +4,23 @@
   ... 
 }:
 {
+  age.secrets = {
+    SyncthingKey = {
+      file = ../../../../../secrets/syncthing/key.pem.age;
+    };
+    SyncthingCert = {
+      file = ../../../../../secrets/syncthing/cert.pem.age;
+    };
+  };
   services.syncthing = {
     enable = true;
+    key = config.age.secrets.SyncthingKey.path;
+    cert = config.age.secrets.SyncthingCert.path;
 
     settings = {
 
       devices = {
 
-        MeguPhone = {
-          id = "6AZN3QI-QCCK6UJ-5RYHRFP-NNRNET6-CMBFP7U-JU26I6S-XIYT2PA-QVBGYQD";
-          name = "MeguPhone";
-        };
         MeguPixel = {
           id = "JD7TYAJ-SJSVYHK-VKPLIBZ-RSPUIEU-MMKC4SD-ATKTA7R-2BPZRDH-ZCOYWQ6";
           name = "MeguPixel";
@@ -27,13 +33,13 @@
           id = "XYJZMSS-6IMTC4J-FGUP3UC-QLURHPU-X727C7A-3RSWOKH-KZSS7CI-FRDKZAD";
           name = "MeguServer";
         };
+
       };
 
       folders = {
         "Obsidian notes" = {
           path = "~/sync/obsidian";
           devices = [
-            "MeguPhone"
             "MeguPixel"
             "MeguFW12"
             "MeguServer"
@@ -43,7 +49,6 @@
         "Twitter" = {
           path = "~/sync/art/twitter";
           devices = [
-            "MeguPhone"
             "MeguPixel"
           ];
         };

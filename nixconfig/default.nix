@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 # Default settings for all machines
@@ -10,6 +11,7 @@
     ./fonts.nix
     ./programs.nix
     ./services.nix
+    inputs.agenix.nixosModules.default
   ];
 
   # Enable networking
