@@ -8,6 +8,8 @@
   imports = [
     ../../../../modules/noctaliadesktop.nix
   ];
+  programs.niri.enable = true;
+  
   # Monitor brightness adjustment support
   hardware.i2c.enable = true;
   
@@ -15,9 +17,6 @@
     "i2c" 
     "openrazer"
   ];
-
-  programs.niri.enable = true;
-
 
   users.users.megumori.packages = with pkgs; [
     # unityhub

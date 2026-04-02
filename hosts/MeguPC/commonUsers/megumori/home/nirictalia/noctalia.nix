@@ -311,7 +311,7 @@
       wallpaper = {
         enabled = true;
         overviewEnabled = true;
-        directory = ../../wallpapers;
+        directory = ../../../../../../users/megumori/wallpapers;
         showHiddenFiles = true;
 
         fillMode = "crop";
@@ -322,8 +322,8 @@
   home.file.".cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
       wallpapers = {
-        "DP-1" = "${../../wallpapers/togekk0.png}";
-        "HDMI-A-1" = "${../../wallpapers/yenkurl.jpg}";
+        "DP-1" = "${../../../../../../users/megumori/wallpapers/togekk0.png}";
+        "HDMI-A-1" = "${../../../../../../users/megumori/wallpapers/yenkurl.jpg}";
       };
     };
     force = true;

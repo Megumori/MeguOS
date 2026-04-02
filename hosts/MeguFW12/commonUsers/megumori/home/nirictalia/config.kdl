@@ -1,0 +1,169 @@
+input {
+    keyboard {
+        xkb {
+            layout "fi"
+            model ""
+            rules ""
+            variant ""
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        dwt
+        dwtp
+        natural-scroll
+        middle-emulation
+        accel-profile "adaptive"
+        scroll-method "two-finger"
+        click-method "button-areas"
+        tap-button-map "left-right-middle"
+    }
+    focus-follows-mouse max-scroll-amount="30%"
+}
+output "eDP-1" {
+    mode "1920x1080@60"
+    scale 1.0
+    position x=0 y=0
+    focus-at-startup
+}
+
+screenshot-path "~/Media/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+layout {
+    gaps 8
+    struts {
+        left 16
+        right 16
+        top 0
+        bottom 0
+    }
+    focus-ring { width 4; }
+    border { off; }
+    shadow {
+        on
+        offset x=0.000000 y=5.000000
+        softness 30.000000
+        spread 5.000000
+        draw-behind-window false
+        color "#00000070"
+    }
+    tab-indicator {
+        gap 5.000000
+        width 4.000000
+        length total-proportion=0.500000
+        position "right"
+        gaps-between-tabs 10
+        corner-radius 0.000000
+        urgent-color "blue"
+        active-color "red"
+        inactive-color "grey"
+    }
+    default-column-width
+    preset-column-widths {
+        proportion 0.333333
+        proportion 0.500000
+        proportion 0.666667
+        proportion 1.0
+    }
+    center-focused-column "never"
+    always-center-single-column
+    empty-workspace-above-first
+}
+cursor {
+    xcursor-theme "default"
+    xcursor-size 24
+}
+binds {
+    Ctrl+Alt+Delete { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+Minus { set-column-width "-25%"; }
+    Mod+Plus { set-column-width "+25%"; }
+    Mod+Return { center-column; }
+    Mod+Shift+Minus { set-window-height "-25%"; }
+    Mod+Shift+Plus { set-window-height "+25%"; }
+
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
+    Mod+R { switch-preset-column-width; }
+    Mod+W { toggle-column-tabbed-display; }
+
+    XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioPlay { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
+
+    XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+
+    Mod+1 { focus-workspace "browser"; }
+    Mod+2 { focus-workspace "chat"; }
+    Mod+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+
+    Mod+Up { focus-window-or-workspace-up; }
+    Mod+Down { focus-window-or-workspace-down; }
+    Mod+Left { focus-column-left; }
+    Mod+WheelScrollUp { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+WheelScrollDown { focus-column-right; }
+    Mod+Shift+Up { move-column-to-workspace-up; }
+    Mod+Shift+Down { move-column-to-workspace-down; }
+
+    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+WheelScrollUp { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+WheelScrollDown { move-column-right; }
+
+    Mod+Shift+W { set-column-width "100%"; }
+    Mod+C { close-window; }
+
+    Mod+Ctrl+Up { focus-monitor-up; }
+    Mod+Ctrl+Down { focus-monitor-down; }
+    Mod+Ctrl+Left { focus-monitor-left; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+
+    Mod+Ctrl+Shift+Up { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+Down { move-column-to-monitor-down; }
+    Mod+Ctrl+Shift+Left { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+WheelScrollUp { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+Right { move-column-to-monitor-right; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-to-monitor-right; }
+    
+    
+
+    Mod+E { spawn "thunar"; }
+    Mod+Z { spawn "zen-beta"; }
+    Mod+H { show-hotkey-overlay; }
+    Ctrl+Alt+T { spawn "foot"; }
+    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | satty --filename -"; }
+    Mod+Space repeat=false { spawn "vicinae" "toggle"; }
+    Mod+T { spawn "foot"; }
+    Mod+Shift+T { toggle-window-floating; }
+    Mod+V { spawn "codium"; }
+}
+spawn-at-startup "noctalia-shell"
+spawn-at-startup "syncthing"
+spawn-at-startup "vicinae" "server"
+spawn-at-startup "xwayland-satellite"
+
+window-rule {
+    match app-id="satty"
+    open-floating true
+}
+
+window-rule {
+    match
+    default-column-width { proportion 0.500000; }
+    geometry-corner-radius 5.000000 5.000000 5.000000 5.000000
+    clip-to-geometry true
+}
+layer-rule { match namespace="^quickshell-wallpaper$"; }
+layer-rule {
+    match namespace="^noctalia-overview"
+    place-within-backdrop true
+}
+layer-rule {
+    match namespace="^swww-daemon$"
+    place-within-backdrop true
+}
