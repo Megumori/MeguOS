@@ -299,7 +299,7 @@
         backgroundOpacity = 0.5;
 
         monitors = [
-          "HDMI-A-1"
+          "eDP-1"
         ];
 
         lowUrgencyDuration = 3;
@@ -322,8 +322,7 @@
   home.file.".cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
       wallpapers = {
-        "DP-1" = "${../../../../../../users/megumori/wallpapers/togekk0.png}";
-        "HDMI-A-1" = "${../../../../../../users/megumori/wallpapers/yenkurl.jpg}";
+        "eDP-1" = "${../../../../../../users/megumori/wallpapers/togekk0.png}";
       };
     };
     force = true;
