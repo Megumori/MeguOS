@@ -179,6 +179,14 @@
             }
 
             {
+              id = "Battery";
+              deviceNativePath = "__default__";
+              displayMode = "graphic";
+              hideIfIdle = false;
+              hideIfNotDetected = true;
+            }
+
+            {
               id = "Clock";
               formatHorizontal = "HH:mm ddd, MMM dd";
               formatVertical = "HH mm - dd MM";
