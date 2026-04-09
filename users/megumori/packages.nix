@@ -42,6 +42,7 @@
     wine
     wget
     unzip
+    easyeffects #audio
 
     #screenshot
     grim

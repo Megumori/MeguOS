@@ -72,7 +72,15 @@
 
   hardware.openrazer.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  # Hardware specific packages
+  environment.systemPackages = with pkgs; [
+    #Razer shit n camera
+    openrazer-daemon
+    polychromatic
+    cameractrls-gtk4
+  ];
+
+  
 
   # NFS setup
   boot.supportedFilesystems = [ "nfs" ];
@@ -81,4 +89,6 @@
     fsType = "nfs";
   };
 
+  nixpkgs.config.allowUnfree = true;
+  
 }
