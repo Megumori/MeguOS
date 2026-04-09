@@ -3,7 +3,6 @@
 {
 	imports = [
 	./hardware-configuration.nix
-	./packages.nix
 
 	../../modules/locale-gb_fi.nix
 
@@ -32,6 +31,13 @@
 	#Config for tablet mode
   boot.initrd.kernelModules = [ "pinctrl_tigerlake" ]; 
   hardware.sensor.iio.enable = lib.mkDefault true;
+
+	# Hardware specific packages
+	environment.systemPackages = with pkgs; [
+    framework-tool
+    fw-ectool
+    maliit-keyboard #keyboard for tablet mode
+  ];
 
 	zramSwap.enable = true;
 
