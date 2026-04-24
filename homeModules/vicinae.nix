@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   ...
 }:
 {
@@ -8,19 +7,19 @@
     inputs.vicinae.homeManagerModules.default
   ];
   # Add this to flake.nix inputs:
-    # vicinae = {
-    #   url = "github:vicinaehq/vicinae";
-    # };
+  # vicinae = {
+  #   url = "github:vicinaehq/vicinae";
+  # };
   # Prebuilt cache so I don't have to rebuild each time
   nix.settings = {
     extra-substituters = [
-       "https://vicinae.cachix.org"
+      "https://vicinae.cachix.org"
     ];
     trusted-substituters = [
       "https://vicinae.cachix.org"
     ];
     extra-trusted-public-keys = [
-       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" 
+      "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
     ];
   };
 
@@ -35,5 +34,5 @@
     };
   };
 
-  
-} 
+}
+

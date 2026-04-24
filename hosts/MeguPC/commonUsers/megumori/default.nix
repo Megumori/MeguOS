@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }:
 # Config specific to this user on this host
@@ -9,18 +8,17 @@
     ../../../../modules/noctaliadesktop.nix
   ];
   programs.niri.enable = true;
-  
+
   # Monitor brightness adjustment support
   hardware.i2c.enable = true;
-  
-  users.users.megumori.extraGroups = [ 
-    "i2c" 
+
+  users.users.megumori.extraGroups = [
+    "i2c"
     "openrazer"
   ];
 
   users.users.megumori.packages = with pkgs; [
-    # unityhub
   ];
 
-
 }
+

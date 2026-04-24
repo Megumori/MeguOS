@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }:
 # Config specific to this user on this host
@@ -12,6 +11,7 @@
   programs.niri.enable = true;
 
   users.users.megumori.packages = with pkgs; [
-    
+
   ];
 }
+

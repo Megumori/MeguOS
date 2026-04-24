@@ -1,11 +1,11 @@
 {
- pkgs, 
- lib, 
- ... 
+  pkgs,
+  lib,
+  ...
 }:
-  # Cool boot animation
+# Cool boot animation
 {
- 
+
   # prevents `systemd-vconsole-setup` failing during systemd initrd
   console.earlySetup = true;
   systemd.services.systemd-vconsole-setup.unitConfig.After = "local-fs.target";
@@ -13,11 +13,11 @@
 
     plymouth = {
       enable = true;
-      theme = lib.mkForce "colorful_sliced"; #Change this
+      theme = lib.mkForce "colorful_sliced"; # Change this
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "colorful_sliced" ]; #And this if you want a different theme. Spaces are _, themes found at https://github.com/adi1090x/plymouth-themes
+          selected_themes = [ "colorful_sliced" ]; # And this if you want a different theme. Spaces are _, themes found at https://github.com/adi1090x/plymouth-themes
         })
       ];
     };

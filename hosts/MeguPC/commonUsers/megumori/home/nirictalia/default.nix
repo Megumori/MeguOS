@@ -1,6 +1,4 @@
 {
-  pkgs,
-  config,
   ...
 }:
 # Niri and noctalia stuff
@@ -10,3 +8,4 @@
   ];
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
 }
+

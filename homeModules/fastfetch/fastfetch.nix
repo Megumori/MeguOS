@@ -1,14 +1,12 @@
 {
-  pkgs, 
   ...
 }:
 {
-  programs.fastfetch =
-  {
+  programs.fastfetch = {
     enable = true;
     settings = {
       logo = {
-        source = ./meowgayge.sixel; # make the image with chafa -f sixels /path/to/image -s 24x10 > /path/to/outout/sixel 
+        source = ./meowgayge.sixel; # make the image with chafa -f sixels /path/to/image -s 24x10 > /path/to/outout/sixel
         type = "raw";
         padding = {
           top = 1;
@@ -20,8 +18,7 @@
       display = {
         separator = "| ";
       };
-      modules =
-      [
+      modules = [
         # "break"
         {
           type = "title";
