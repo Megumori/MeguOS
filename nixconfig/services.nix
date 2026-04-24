@@ -1,8 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
-  inputs,
   ...
 }:
 # Basic services for all machines
@@ -23,3 +19,4 @@
 
   };
 }
+

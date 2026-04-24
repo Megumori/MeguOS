@@ -1,7 +1,6 @@
-{ 
-  config, 
-  pkgs, 
-  ... 
+{
+  config,
+  ...
 }:
 {
   age.secrets = {
@@ -64,3 +63,4 @@
     };
   };
 }
+

@@ -1,8 +1,5 @@
 {
-  config,
   lib,
-  pkgs,
-  inputs,
   ...
 }:
 # Locale settings, change stuff or make a new copy for different locales/layouts
@@ -26,10 +23,12 @@
     LC_TIME = "fi_FI.UTF-8";
   };
 
-  console = { # Layout for funky console shenanigans
+  console = {
+    # Layout for funky console shenanigans
     keyMap = "fi";
   };
-  services.xserver.xkb = { # Layout for the rest. May need additional config in hyprland etc?
+  services.xserver.xkb = {
+    # Layout for the rest. May need additional config in hyprland etc?
     layout = "fi";
     variant = "classic";
   };

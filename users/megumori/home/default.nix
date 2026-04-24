@@ -1,16 +1,14 @@
 {
   inputs,
-  config,
   pkgs,
-  specialArgs,
   ...
 }:
 # Basic home manager configs
 {
   imports = [
-  ./packages.nix
-  inputs.catppuccin.homeModules.catppuccin
-  inputs.agenix.homeManagerModules.default
+    ./packages.nix
+    inputs.catppuccin.homeModules.catppuccin
+    inputs.agenix.homeManagerModules.default
   ];
 
   programs.home-manager.enable = true;
@@ -20,7 +18,6 @@
     homeDirectory = "/home/megumori";
     stateVersion = "25.05"; # Original state version, read more in ./nixconfig/default.nix
   }; # CHANGE THIS TO YOUR VALUE IF YOU'RE JUST INSTALLING
-
 
   programs.git = {
     enable = true;
@@ -37,12 +34,18 @@
     identityPaths = [ "/home/megumori/.ssh/id_ed25519" ];
   };
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 
   catppuccin = {
     enable = true;
     flavor = "mocha";
     accent = "lavender";
     vesktop.enable = false;
+    #fish.enable = false;
+    foot.enable = false;
   };
   # catppuccin/nix may say it can configure gtk but this is a lie, don't believe it
   gtk = {
@@ -59,8 +62,8 @@
   };
   dconf = {
     enable = true;
-      settings = {
-        "org/gnome/desktop/interface" = {
+    settings = {
+      "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
       };
     };

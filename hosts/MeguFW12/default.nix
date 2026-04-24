@@ -1,73 +1,76 @@
-{ config, pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-	imports = [
-	./hardware-configuration.nix
+  imports = [
+    ./hardware-configuration.nix
 
-	../../modules/locale-gb_fi.nix
+    ../../modules/locale-gb_fi.nix
 
-	../../modules/sddm.nix
-	../../modules/plasma.nix
+    ../../modules/sddm.nix
+    ../../modules/plasma.nix
 
-	../../modules/plymouth.nix #Boot animation
-	];
+    ../../modules/plymouth.nix # Boot animation
+  ];
 
-	boot = {
-		loader = {
-			grub = {
+  boot = {
+    loader = {
+      grub = {
         enable = true;
         efiSupport = true;
         device = "nodev";
       };
-			efi.canTouchEfiVariables = true;
-		};
+      efi.canTouchEfiVariables = true;
+    };
 
-		initrd = {
-			systemd.enable = true; # Enables password fallback for the encrypted devices (maybe some other stuff too idk)
-		};
-	};
-		
-	
-	#Config for tablet mode
-  boot.initrd.kernelModules = [ "pinctrl_tigerlake" ]; 
+    initrd = {
+      systemd.enable = true; # Enables password fallback for the encrypted devices (maybe some other stuff too idk)
+    };
+  };
+
+  #Config for tablet mode
+  boot.initrd.kernelModules = [ "pinctrl_tigerlake" ];
   hardware.sensor.iio.enable = lib.mkDefault true;
 
-	# Hardware specific packages
-	environment.systemPackages = with pkgs; [
+  # Hardware specific packages
+  environment.systemPackages = with pkgs; [
     framework-tool
     fw-ectool
-    maliit-keyboard #keyboard for tablet mode
+    maliit-keyboard # keyboard for tablet mode
   ];
 
-	zramSwap.enable = true;
+  zramSwap.enable = true;
 
-	#framework update
+  #framework update
   services.fwupd.enable = true;
 
-	#Bluetooth
-	hardware.bluetooth = {
-		enable = true;
-		powerOnBoot = true;
-		settings = {
-			General = {
-				# Shows battery charge of connected devices on supported
-				# Bluetooth adapters. Defaults to 'false'.
-				Experimental = true;
-				# When enabled other devices can connect faster to us, however
-				# the tradeoff is increased power consumption. Defaults to
-				# 'false'.
-				FastConnectable = true;
-			};
-			Policy = {
-				# Enable all controllers when they are found. This includes
-				# adapters present on start as well as adapters that are plugged
-				# in later on. Defaults to 'true'.
-				AutoEnable = true;
-			};
-		};
-	};
-	services.blueman.enable = true;
+  #Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        # Shows battery charge of connected devices on supported
+        # Bluetooth adapters. Defaults to 'false'.
+        Experimental = true;
+        # When enabled other devices can connect faster to us, however
+        # the tradeoff is increased power consumption. Defaults to
+        # 'false'.
+        FastConnectable = true;
+      };
+      Policy = {
+        # Enable all controllers when they are found. This includes
+        # adapters present on start as well as adapters that are plugged
+        # in later on. Defaults to 'true'.
+        AutoEnable = true;
+      };
+    };
+  };
+  services.blueman.enable = true;
 
-	nixpkgs.config.allowUnfree = true;
-	
+  nixpkgs.config.allowUnfree = true;
+
 }

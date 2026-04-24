@@ -1,8 +1,6 @@
 {
-  config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -20,7 +18,7 @@
     };
 
   };
-  
+
   #Make it so steam works even with allow unfree packages disabled
   nixpkgs.config.allowUnfreePredicate =
     pkg:

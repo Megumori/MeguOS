@@ -1,7 +1,5 @@
-{ 
-  config, 
-  pkgs, 
-  ... 
+{
+  ...
 }:
 # FW12 syncthing config
 {
@@ -55,5 +53,6 @@
     };
 
   };
-  
+
 }
+

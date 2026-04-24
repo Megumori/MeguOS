@@ -1,7 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
   inputs,
   ...
 }:
@@ -10,18 +7,18 @@
     inputs.aagl.nixosModules.default
   ];
   # Add this to flake.nix inputs:
-    # aagl = {
-    #   url = "github:ezKEa/aagl-gtk-on-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-  
+  # aagl = {
+  #   url = "github:ezKEa/aagl-gtk-on-nix";
+  #   inputs.nixpkgs.follows = "nixpkgs";
+  # };
+
   # Extra prebuilt cache, since it's not in nixpkgs shockingly enough
   nix.settings = {
     extra-substituters = [
-       "https://ezkea.cachix.org" 
+      "https://ezkea.cachix.org"
     ];
     extra-trusted-public-keys = [
-       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+      "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
     ];
 
   };

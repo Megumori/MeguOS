@@ -1,7 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
   inputs,
   ...
 }:
@@ -18,10 +15,10 @@
   networking.networkmanager.enable = true;
 
   nix.settings = {
-    experimental-features = [ 
-      "nix-command" 
-      "flakes" 
-      ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     trusted-users = [
       "root"
       "@wheel"
@@ -37,3 +34,4 @@
   system.stateVersion = "25.05"; # CHANGE THIS TO YOUR VALUE IF YOU'RE JUST INSTALLING
 
 }
+

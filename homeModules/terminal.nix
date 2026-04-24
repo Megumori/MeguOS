@@ -1,8 +1,5 @@
 {
-  inputs,
-  config,
   pkgs,
-  lib,
   ...
 }:
 {
@@ -250,6 +247,7 @@
         };
         colors-dark = {
           alpha = "0.93";
+          background = "1e1e2e";
         };
       };
 

@@ -1,16 +1,15 @@
 {
-  inputs,
-  config,
   pkgs,
   ...
 }:
 #user home packages
 {
-  imports = [ # Custom modules
-  	../../../homeModules/zenbrowser.nix
-  	../../../homeModules/vscode.nix
-  	../../../homeModules/obs.nix
-    ../../../homeModules/nixvim.nix
+  imports = [
+    # Custom modules
+    ../../../homeModules/zenbrowser.nix
+    ../../../homeModules/vscode.nix
+    ../../../homeModules/obs.nix
+    ../../../homeModules/neovim.nix
     ../../../homeModules/vicinae.nix
     ../../../homeModules/vesktop.nix
     ../../../homeModules/terminal.nix

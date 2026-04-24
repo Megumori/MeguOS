@@ -1,23 +1,20 @@
 {
-  config,
-  lib,
   pkgs,
-  inputs,
   ...
 }:
 #user nix packages
 {
-  imports = [ # custom modules
+  imports = [
+    # custom modules
     ../../modules/openssh.nix
 
     ../../modules/steam.nix
     ../../modules/sunshine.nix
     ../../modules/thunar.nix
   ];
-  
+
   # Remember to change name
   users.users.megumori.packages = with pkgs; [
-
 
     #messaging
     signal-desktop
@@ -26,7 +23,7 @@
 
     #uni
     anki-bin
-      mpv #needed for anki audio
+    mpv # needed for anki audio
     xournalpp
     python314
     jetbrains.pycharm-oss
@@ -42,7 +39,7 @@
     wine
     wget
     unzip
-    easyeffects #audio
+    easyeffects # audio
 
     #screenshot
     grim
@@ -61,6 +58,6 @@
     #vpn
     protonvpn-gui
     wireguard-tools
-    
+
   ];
 }
