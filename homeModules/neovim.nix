@@ -54,11 +54,12 @@
         };
 
         ui = {
+          # Noice moves the command prompt up top to a window when you run commands, maybe some other stuff, idk seems neat
           noice = {
             enable = true;
           };
         };
-
+        # Language server protocol, very neat, helps with all em autofills and checks
         lsp = {
           enable = true;
           formatOnSave = true;
@@ -67,7 +68,7 @@
         languages = {
           enableTreesitter = true;
           enableFormat = true;
-          # enableExtraDiagnostics = true;
+          enableExtraDiagnostics = true;
           nix = {
             format = {
               type = [ "nixfmt" ];
@@ -87,7 +88,7 @@
             enable = true;
           };
         };
-
+        # Autofill in the other bracket when doing {} or [] etc.
         autopairs = {
           nvim-autopairs = {
             enable = true;
@@ -106,6 +107,7 @@
         diagnostics = {
           enable = true;
           config = {
+            # Make the error messages show up in virtual lines to show clearly where and what I fucked up
             virtual_lines = true;
           };
         };
@@ -117,8 +119,11 @@
               both = null; # Stop conflicting with comment
             };
           };
+          neogit = {
+            enable = true;
+          };
         };
-
+        # Top bar with all them tabs
         tabline = {
           nvimBufferline = {
             enable = true;
@@ -127,13 +132,13 @@
             };
           };
         };
-
+        # Bottom bar with all them cool info
         statusline = {
           lualine = {
             enable = true;
           };
         };
-
+        # Shows the filetree of the directory you opened nvim from, with :Neotree
         filetree = {
           neo-tree = {
             enable = true;

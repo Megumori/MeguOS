@@ -56,7 +56,7 @@
     obs-studio
 
     #vpn
-    protonvpn-gui
+    proton-vpn
     wireguard-tools
 
   ];
