@@ -13,7 +13,7 @@
     # dejavu_fonts
     inputs.comic-code-ligatures-nerd-font.packages."${pkgs.stdenv.hostPlatform.system
     }".comic-code-ligatures-nerd-font
-
+    roboto
   ];
 
 }
