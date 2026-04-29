@@ -21,5 +21,6 @@
   home.packages = with pkgs; [
     cinny-desktop
     inkscape
+    localsend # Open firewall port 53317
   ];
 }
