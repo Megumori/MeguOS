@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 # Home-manager config specific to this user on this host
@@ -7,5 +8,8 @@
     ./nirictalia
     ./syncthing.nix
   ];
-}
+  home.packages = with pkgs; [
+    rnote
+  ];
 
+}
