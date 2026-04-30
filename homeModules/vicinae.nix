@@ -32,7 +32,23 @@
         USE_LAYER_SHELL = 1;
       };
     };
+    settings = {
+      font = {
+        normal = {
+          size = 12;
+          family = "ComicCodeLigatures Nerd Font";
+        };
+      };
+      theme = {
+        dark = {
+          name = "catppuccin-mocha";
+        };
+      };
+      launcher_window = {
+        opacity = 0.8;
+      };
+    };
+
   };
 
 }
-

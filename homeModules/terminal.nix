@@ -246,7 +246,8 @@
           initial-window-size-chars = "100x25";
         };
         colors-dark = {
-          alpha = "0.93";
+          alpha = "0.9";
+          blur = true;
           background = "1e1e2e";
         };
       };
