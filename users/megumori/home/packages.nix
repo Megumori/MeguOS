@@ -14,7 +14,7 @@
     ../../../homeModules/vesktop.nix
     ../../../homeModules/terminal.nix
     ../../../homeModules/fastfetch
-    ../../../homeModules/lutris.nix
+    # ../../../homeModules/lutris.nix
   ];
 
   # Could have home packages down here
