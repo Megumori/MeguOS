@@ -6,6 +6,7 @@
 {
   imports = [
     ../../../../modules/noctaliadesktop.nix
+    ./syncthing.nix
   ];
 
   programs.niri.enable = true;
@@ -14,4 +15,3 @@
 
   ];
 }
-

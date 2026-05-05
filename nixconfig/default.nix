@@ -1,5 +1,4 @@
 {
-  inputs,
   ...
 }:
 # Default settings for all machines
@@ -8,7 +7,7 @@
     ./fonts.nix
     ./programs.nix
     ./services.nix
-    inputs.agenix.nixosModules.default
+    ./sops.nix
   ];
 
   # Enable networking
@@ -34,4 +33,3 @@
   system.stateVersion = "25.05"; # CHANGE THIS TO YOUR VALUE IF YOU'RE JUST INSTALLING
 
 }
-

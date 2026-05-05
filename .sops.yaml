@@ -1,0 +1,13 @@
+keys:
+  - &user_megumoripc age13jytwrhjvrumemgx8ga96m5mzkmnm8t8r8w8tlvvlljyd6f93q3qjugv2k
+  - &user_megumorifw12 age1darq8d54yv5u4q4lls4479zffn5rtu0ew83xlrntykqdjpea2y0qh9c0xt
+  - &host_megupc age176z4msxshcyrhvchyv7kd4h7gqagau4supm20ksc5rc8pclw9eqslcvlcw
+  - &host_megufw12 age1e3hq7lneegfzq63kvzse3lmh0qprdyc34pwfvh0earjlqz8u33aq765jdj
+creation_rules:
+  - path_regex: secrets/megumori/.*
+    key_groups:
+    - age:
+      - *user_megumoripc
+      - *user_megumorifw12
+      - *host_megupc
+      - *host_megufw12

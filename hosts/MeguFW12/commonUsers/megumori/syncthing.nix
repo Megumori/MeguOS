@@ -1,19 +1,30 @@
 {
+  config,
   ...
 }:
 # FW12 syncthing config
 {
+  sops = {
+    secrets = {
+      stkey = {
+        format = "binary";
+        sopsFile = ../../../../secrets/megumori/syncthing/key.pem;
+      };
+      stcert = {
+        format = "binary";
+        sopsFile = ../../../../secrets/megumori/syncthing/cert.pem;
+      };
+    };
+  };
   services.syncthing = {
     enable = true;
 
     settings = {
+      key = "${config.sops.secrets.stkey.path}";
+      cert = "${config.sops.secrets.stcert.path}";
 
       devices = {
 
-        MeguPhone = {
-          id = "6AZN3QI-QCCK6UJ-5RYHRFP-NNRNET6-CMBFP7U-JU26I6S-XIYT2PA-QVBGYQD";
-          name = "MeguPhone";
-        };
         MeguPixel = {
           id = "JD7TYAJ-SJSVYHK-VKPLIBZ-RSPUIEU-MMKC4SD-ATKTA7R-2BPZRDH-ZCOYWQ6";
           name = "MeguPixel";
@@ -23,7 +34,7 @@
           name = "MeguPC";
         };
         MeguServer = {
-          id = "KFIV4K7-ZCCFTYN-YPQQMWU-OEVSOY3-OBA4QSB-CR6WCQF-WDAZTIM-PVS42AZ";
+          id = "XYJZMSS-6IMTC4J-FGUP3UC-QLURHPU-X727C7A-3RSWOKH-KZSS7CI-FRDKZAD";
           name = "MeguServer";
         };
       };
@@ -33,7 +44,6 @@
         "Obsidian notes" = {
           path = "~/sync/obsidian";
           devices = [
-            "MeguPhone"
             "MeguPixel"
             "MeguPC"
             "MeguServer"
@@ -55,4 +65,3 @@
   };
 
 }
-
