@@ -3,18 +3,22 @@
   ...
 }:
 {
-  age.secrets = {
-    SyncthingKey = {
-      file = ../../../../../secrets/syncthing/key.pem.age;
-    };
-    SyncthingCert = {
-      file = ../../../../../secrets/syncthing/cert.pem.age;
+  sops = {
+    secrets = {
+      stkey = {
+        format = "binary";
+        sopsFile = ../../../../secrets/megumori/syncthing/key.pem;
+      };
+      stcert = {
+        format = "binary";
+        sopsFile = ../../../../secrets/megumori/syncthing/cert.pem;
+      };
     };
   };
   services.syncthing = {
     enable = true;
-    key = config.age.secrets.SyncthingKey.path;
-    cert = config.age.secrets.SyncthingCert.path;
+    key = "${config.sops.secrets.stkey.path}";
+    cert = "${config.sops.secrets.stcert.path}";
 
     settings = {
 
@@ -63,4 +67,3 @@
     };
   };
 }
-

@@ -6,7 +6,6 @@
 {
   imports = [
     ./nirictalia
-    ./syncthing.nix
   ];
   home.packages = with pkgs; [
     rnote

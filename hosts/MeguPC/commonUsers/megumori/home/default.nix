@@ -7,7 +7,6 @@
   imports = [
     ./nirictalia
     ./retroarch
-    ./syncthing.nix
   ];
 
   home.packages = with pkgs; [
@@ -15,4 +14,3 @@
     (pkgs.callPackage ../../../../../packages/vintagestory { })
   ];
 }
-

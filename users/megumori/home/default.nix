@@ -8,7 +8,6 @@
   imports = [
     ./packages.nix
     inputs.catppuccin.homeModules.catppuccin
-    inputs.agenix.homeManagerModules.default
   ];
 
   programs.home-manager.enable = true;
@@ -28,10 +27,6 @@
       };
       push.autoSetupRemote = true;
     };
-  };
-
-  age = {
-    identityPaths = [ "/home/megumori/.ssh/id_ed25519" ];
   };
 
   home.sessionVariables = {
