@@ -2,16 +2,17 @@
   config,
   ...
 }:
+# MeguPC syncthing config
 {
   sops = {
     secrets = {
       stkey = {
         format = "binary";
-        sopsFile = ../../../../secrets/megumori/syncthing/key.pem;
+        sopsFile = ../../../../secrets/megumori/syncthing/MeguPC/key.pem;
       };
       stcert = {
         format = "binary";
-        sopsFile = ../../../../secrets/megumori/syncthing/cert.pem;
+        sopsFile = ../../../../secrets/megumori/syncthing/MeguPC/cert.pem;
       };
     };
   };
@@ -19,6 +20,9 @@
     enable = true;
     key = "${config.sops.secrets.stkey.path}";
     cert = "${config.sops.secrets.stcert.path}";
+
+    dataDir = "/home/megumori/sync/";
+    user = "megumori";
 
     settings = {
 
@@ -29,11 +33,11 @@
           name = "MeguPixel";
         };
         MeguFW12 = {
-          id = "4PICAVK-FTPH5O2-QWUMPW5-IXI6OHG-ENXDD7R-VAHHLLR-QHKHKHP-6HO2DAD";
+          id = "6YL2LUE-7EZDCZD-6YBLUMY-SRLI4TW-XJ6K6GA-57EU6CG-FVHNJPE-OYE54AS";
           name = "MeguFW12";
         };
         MeguServer = {
-          id = "XYJZMSS-6IMTC4J-FGUP3UC-QLURHPU-X727C7A-3RSWOKH-KZSS7CI-FRDKZAD";
+          id = "W6J5WNN-K5TELIS-CKIU5QZ-O2KD5GU-5CA7PJZ-J5AOH3A-WBPKSPQ-7WY7AQQ";
           name = "MeguServer";
         };
 
@@ -53,6 +57,7 @@
           path = "~/sync/art/twitter";
           devices = [
             "MeguPixel"
+            "MeguServer"
           ];
         };
 
