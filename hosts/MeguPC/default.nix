@@ -75,13 +75,6 @@
     cameractrls-gtk4
   ];
 
-  # NFS setup
-  boot.supportedFilesystems = [ "nfs" ];
-  fileSystems."/mnt/Jellyfin" = {
-    device = "192.168.10.204:/Jellyfin";
-    fsType = "nfs";
-  };
-
   nixpkgs.config.allowUnfree = true;
 
 }
