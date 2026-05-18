@@ -41,12 +41,6 @@
     unzip
     easyeffects # audio
 
-    #screenshot
-    grim
-    slurp
-    satty
-    wl-clipboard
-
     #general
     libreoffice-qt
     qimgv

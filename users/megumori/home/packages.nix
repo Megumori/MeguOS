@@ -15,6 +15,7 @@
     ../../../homeModules/terminal.nix
     ../../../homeModules/fastfetch
     # ../../../homeModules/lutris.nix
+    ../../../homeModules/flameshot.nix
   ];
 
   # Could have home packages down here
