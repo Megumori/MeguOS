@@ -5,13 +5,13 @@
 # Config specific to this user on this host
 {
   imports = [
-    ../../../../modules/noctaliadesktop.nix
+    ./niri.nix
     ./syncthing.nix
   ];
 
-  programs.niri.enable = true;
+  users.users.megumori = {
+    packages = with pkgs; [
 
-  users.users.megumori.packages = with pkgs; [
-
-  ];
+    ];
+  };
 }

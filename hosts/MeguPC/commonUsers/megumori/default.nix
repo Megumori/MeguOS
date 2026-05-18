@@ -5,20 +5,20 @@
 # Config specific to this user on this host
 {
   imports = [
-    ../../../../modules/noctaliadesktop.nix
     ./syncthing.nix
+    ./niri.nix
   ];
-  programs.niri.enable = true;
 
   # Monitor brightness adjustment support
   hardware.i2c.enable = true;
 
-  users.users.megumori.extraGroups = [
-    "i2c"
-    "openrazer"
-  ];
-
-  users.users.megumori.packages = with pkgs; [
-  ];
+  users.users.megumori = {
+    extraGroups = [
+      "i2c"
+      "openrazer"
+    ];
+    packages = with pkgs; [
+    ];
+  };
 
 }

@@ -30,7 +30,6 @@ output "eDP-1" {
     focus-at-startup
 }
 
-screenshot-path "~/Media/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
 layout {
     gaps 8
@@ -136,7 +135,7 @@ binds {
     Mod+Z { spawn "zen-beta"; }
     Mod+H { show-hotkey-overlay; }
     Ctrl+Alt+T { spawn "foot"; }
-    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | satty --filename -"; }
+    Mod+Shift+S { spawn "flameshot" "gui"; }
     Mod+Space repeat=false { spawn "vicinae" "toggle"; }
     Mod+T { spawn "foot"; }
     Mod+Shift+T { toggle-window-floating; }
@@ -148,8 +147,10 @@ spawn-at-startup "vicinae" "server"
 spawn-at-startup "xwayland-satellite"
 
 window-rule {
-    match app-id="satty"
+    match title="flameshot"
+
     open-floating true
+    open-maximized false
 }
 
 window-rule {

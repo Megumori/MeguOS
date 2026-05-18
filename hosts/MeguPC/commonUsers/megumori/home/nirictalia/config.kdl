@@ -21,6 +21,9 @@ input {
         click-method "button-areas"
         tap-button-map "left-right-middle"
     }
+    tablet {
+        map-to-output "DP-1" 
+    }
     focus-follows-mouse max-scroll-amount="30%"
 }
 output "DP-1" {
@@ -33,10 +36,9 @@ output "HDMI-A-1" {
     mode "1920x1080@60"
     scale 1.0
     transform "90"
-    position x=1080 y=-150
+    position x=-1080 y=-150
 }
 
-screenshot-path "~/Media/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
 layout {
     gaps 8
@@ -142,7 +144,7 @@ binds {
     Mod+Z { spawn "zen-beta"; }
     Mod+H { show-hotkey-overlay; }
     Ctrl+Alt+T { spawn "foot"; }
-    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | satty --filename -"; }
+    Mod+Shift+S { spawn "flameshot" "gui"; }
     Mod+Space repeat=false { spawn "vicinae" "toggle"; }
     Mod+T { spawn "foot"; }
     Mod+Shift+T { toggle-window-floating; }
@@ -159,10 +161,10 @@ spawn-at-startup "vesktop"
 spawn-at-startup "Telegram"
 
 window-rule {
-    match app-id="signal-desktop"
+    match app-id="signal"
     match app-id="cinny"
     match app-id="vesktop"
-    match app-id="Telegram"
+    match app-id="org.telegram.desktop"
 
     open-on-output "HDMI-A-1"
     default-column-width { proportion 1.0; }
@@ -175,8 +177,10 @@ window-rule {
     clip-to-geometry true
 }
 window-rule {
-    match app-id="satty"
+    match title="flameshot"
+
     open-floating true
+    open-maximized false
 }
 layer-rule { match namespace="^quickshell-wallpaper$"; }
 layer-rule {
