@@ -16,42 +16,5 @@
   # Remember to change name
   users.users.megumori.packages = with pkgs; [
 
-    #messaging
-    signal-desktop
-    telegram-desktop
-    fluffychat
-
-    #uni
-    anki-bin
-    mpv # needed for anki audio
-    xournalpp
-    python314
-    jetbrains.pycharm-oss
-
-    #gaming
-    prismlauncher
-
-    #art
-    krita
-
-    #Tech shenanigans
-    moonlight-qt
-    wine
-    wget
-    unzip
-    easyeffects # audio
-
-    #general
-    libreoffice-qt
-    qimgv
-    obsidian
-    bitwarden-desktop
-    vlc
-    obs-studio
-
-    #vpn
-    proton-vpn
-    wireguard-tools
-
   ];
 }

@@ -34,8 +34,6 @@
           expandtab = true;
           tabstop = 2;
           shiftwidth = 2;
-          # Synchronise the clipboard with the system clipboard so I can actually copypaste stuff in and out of nvim
-          clipboard = "unnamedplus";
           # Make the cursor be centered
           scrolloff = 999;
           # Allow the visual block mode to make blocks anywhere (enter with Ctrl V)
@@ -44,6 +42,13 @@
           inccommand = "split";
           # Make looking for and tabbing for functions a lil easier on myself
           ignorecase = true;
+        };
+
+        clipboard = {
+          enable = true;
+          providers.wl-copy.enable = true;
+          # Synchronise the clipboard with the system clipboard so I can actually copypaste stuff in and out of nvim
+          registers = "unnamedplus";
         };
 
         theme = {

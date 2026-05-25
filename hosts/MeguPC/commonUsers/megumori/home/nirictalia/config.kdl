@@ -139,6 +139,7 @@ binds {
     Mod+Ctrl+Shift+WheelScrollDown { move-column-to-monitor-right; }
     
     
+    Mod+Shift+F {spawn "wl-freeze" "-a"; }
 
     Mod+E { spawn "thunar"; }
     Mod+Z { spawn "zen-beta"; }
