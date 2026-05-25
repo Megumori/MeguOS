@@ -8,7 +8,6 @@
     settings = {
       # Find more at https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
       autoStartMinimized = true;
-      arRPC = true;
       disableMinSize = true;
       tray = false;
       hardwareAcceleration = true;
