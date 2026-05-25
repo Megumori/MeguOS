@@ -37,7 +37,7 @@
           name = "MeguPC";
         };
         MeguServer = {
-          id = "W6J5WNN-K5TELIS-CKIU5QZ-Q2KD5GU-5CA7PJZ-J5AOH3A-WBPKSPQ-7WY7AQQ";
+          id = "W6J5WNN-K5TELIS-CKIU5QZ-O2KD5GU-5CA7PJZ-J5AOH3A-WBPKSPQ-7WY7AQQ";
           name = "MeguServer";
         };
       };
