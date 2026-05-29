@@ -46,6 +46,12 @@
 
   #framework update
   services.fwupd.enable = true;
+  # Needed for printer discovery
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   #Bluetooth
   hardware.bluetooth = {
