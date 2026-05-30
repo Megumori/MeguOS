@@ -11,11 +11,14 @@
     ../../../homeModules/obs.nix
     ../../../homeModules/neovim.nix
     ../../../homeModules/vicinae.nix
+    ../../../homeModules/fuzzel.nix
     ../../../homeModules/vesktop.nix
     ../../../homeModules/terminal.nix
     ../../../homeModules/fastfetch
     # ../../../homeModules/lutris.nix
     ../../../homeModules/flameshot.nix
+    ../../../homeModules/yazi.nix
+
   ];
 
   # Could have home packages down here
@@ -54,6 +57,7 @@
     libreoffice-qt
     obsidian
     bitwarden-desktop
+    qalculate-gtk
 
     #media
     vlc

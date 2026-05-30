@@ -107,35 +107,34 @@ binds {
 
     Mod+1 { focus-workspace "browser"; }
     Mod+2 { focus-workspace "vesktop"; }
-    Mod+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 
-    Mod+Up { focus-window-or-workspace-up; }
-    Mod+Down { focus-window-or-workspace-down; }
-    Mod+Left { focus-column-left; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+H { focus-column-left; }
     Mod+WheelScrollUp { focus-column-left; }
-    Mod+Right { focus-column-right; }
+    Mod+L { focus-column-right; }
     Mod+WheelScrollDown { focus-column-right; }
-    Mod+Shift+Up { move-column-to-workspace-up; }
-    Mod+Shift+Down { move-column-to-workspace-down; }
+    Mod+Shift+K { move-column-to-workspace-up; }
+    Mod+Shift+J { move-column-to-workspace-down; }
 
-    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+H { move-column-left; }
     Mod+Shift+WheelScrollUp { move-column-left; }
-    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+L { move-column-right; }
     Mod+Shift+WheelScrollDown { move-column-right; }
 
     Mod+Shift+W { set-column-width "100%"; }
     Mod+C { close-window; }
 
-    Mod+Ctrl+Up { focus-monitor-up; }
-    Mod+Ctrl+Down { focus-monitor-down; }
-    Mod+Ctrl+Left { focus-monitor-left; }
-    Mod+Ctrl+Right { focus-monitor-right; }
+    Mod+Ctrl+K { focus-monitor-up; }
+    Mod+Ctrl+J { focus-monitor-down; }
+    Mod+Ctrl+H { focus-monitor-left; }
+    Mod+Ctrl+L { focus-monitor-right; }
 
-    Mod+Ctrl+Shift+Up { move-column-to-monitor-up; }
-    Mod+Ctrl+Shift+Down { move-column-to-monitor-down; }
-    Mod+Ctrl+Shift+Left { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+K { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+J { move-column-to-monitor-down; }
+    Mod+Ctrl+Shift+H { move-column-to-monitor-left; }
     Mod+Ctrl+Shift+WheelScrollUp { move-column-to-monitor-left; }
-    Mod+Ctrl+Shift+Right { move-column-to-monitor-right; }
+    Mod+Ctrl+Shift+L { move-column-to-monitor-right; }
     Mod+Ctrl+Shift+WheelScrollDown { move-column-to-monitor-right; }
     
     
@@ -143,10 +142,9 @@ binds {
 
     Mod+E { spawn "thunar"; }
     Mod+Z { spawn "zen-beta"; }
-    Mod+H { show-hotkey-overlay; }
     Ctrl+Alt+T { spawn "foot"; }
     Mod+Shift+S { spawn "flameshot" "gui"; }
-    Mod+Space repeat=false { spawn "vicinae" "toggle"; }
+    Mod+Space repeat=false { spawn "fuzzel"; }
     Mod+T { spawn "foot"; }
     Mod+Shift+T { toggle-window-floating; }
     Mod+V { spawn "codium"; }
