@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   ...
 }:
 
@@ -10,10 +9,21 @@
   #   url = "github:0xc000022070/zen-browser-flake";
   #   inputs.nixpkgs.follows = "nixpkgs";
   # };
+  imports = [ inputs.zen-browser.homeModules.beta ];
 
-  home.packages = with pkgs; [
+  programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+    profiles.default = {
+      id = 0;
+      sine = {
+        enable = true;
+      };
+      search = {
+        force = true;
+        default = "ddg";
+      };
+    };
 
-    inputs.zen-browser.packages."${system}".default
-
-  ];
+  };
 }
