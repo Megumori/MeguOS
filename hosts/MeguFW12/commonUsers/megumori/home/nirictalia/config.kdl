@@ -136,14 +136,13 @@ binds {
     Mod+H { show-hotkey-overlay; }
     Ctrl+Alt+T { spawn "foot"; }
     Mod+Shift+S { spawn "flameshot" "gui"; }
-    Mod+Space repeat=false { spawn "vicinae" "toggle"; }
+    Mod+Space repeat=false { spawn "fuzzel"; }
     Mod+T { spawn "foot"; }
     Mod+Shift+T { toggle-window-floating; }
     Mod+V { spawn "codium"; }
 }
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "syncthing"
-spawn-at-startup "vicinae" "server"
 spawn-at-startup "xwayland-satellite"
 
 window-rule {
