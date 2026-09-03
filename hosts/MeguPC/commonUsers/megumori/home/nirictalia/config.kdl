@@ -151,17 +151,16 @@ binds {
 }
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "syncthing"
-spawn-at-startup "vicinae" "server"
 spawn-at-startup "xwayland-satellite"
 
 spawn-at-startup "signal-desktop"
-spawn-at-startup "cinny"
+spawn-at-startup "fluffychat"
 spawn-at-startup "vesktop"
 spawn-at-startup "Telegram"
 
 window-rule {
     match app-id="signal"
-    match app-id="cinny"
+    match app-id="fluffychat"
     match app-id="vesktop"
     match app-id="org.telegram.desktop"
 

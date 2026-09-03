@@ -1,5 +1,10 @@
 {
+  lib,
+  ...
+}:
+{
   programs.niri.enable = true;
+  services.displayManager.defaultSession = lib.mkForce "niri";
   # Needed to set screenshot portal to wlr for flameshot to work.
   xdg.portal = {
     enable = true;

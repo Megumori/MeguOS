@@ -10,7 +10,6 @@
     ../../../homeModules/vscode.nix
     ../../../homeModules/obs.nix
     ../../../homeModules/neovim.nix
-    ../../../homeModules/vicinae.nix
     ../../../homeModules/fuzzel.nix
     ../../../homeModules/vesktop.nix
     ../../../homeModules/terminal.nix
@@ -40,6 +39,7 @@
 
     #gaming
     prismlauncher
+    heroic
 
     #art
     krita
@@ -56,7 +56,6 @@
     #general
     libreoffice-qt
     obsidian
-    bitwarden-desktop
     qalculate-gtk
 
     #media

@@ -8,7 +8,7 @@
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-    };
+    }; # Maybe some day I actually do flake parts </3
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -34,12 +34,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    vicinae = {
-      url = "github:vicinaehq/vicinae";
-    };
-
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia-shell/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
