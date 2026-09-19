@@ -52,6 +52,7 @@
     localsend # Open firewall port 53317
     kdePackages.filelight
     wl-freeze
+    busybox
 
     #general
     libreoffice-qt
