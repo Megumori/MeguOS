@@ -16,11 +16,32 @@
     enable = true;
     settings = {
       vim = {
-        # keymaps = [
-        #   {
-
-        #   }
-        # ];
+        keymaps = [
+          {
+            key = "<Leader><Tab>";
+            mode = [ "n" ];
+            silent = true;
+            action = ":Neotree toggle<CR>"; # Toggle Neotree
+          }
+          {
+            key = "<Leader>q";
+            mode = [
+              "n"
+              "v"
+            ];
+            silent = true;
+            action = ":bdelete<CR>"; # Close buffer
+          }
+          {
+            key = "<Leader>w";
+            mode = [
+              "n"
+              "v"
+            ];
+            silent = true;
+            action = ":w<CR>"; # Write changes
+          }
+        ];
 
         opts = {
           relativenumber = true;
@@ -152,6 +173,12 @@
               filesystem = {
                 filtered_items = {
                   visible = true;
+                };
+              };
+              window = {
+                mappings = {
+                  "o" = "open";
+                  "s" = "fuzzy_finder";
                 };
               };
             };

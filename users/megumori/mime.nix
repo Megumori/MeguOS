@@ -18,6 +18,7 @@ in
     mime = {
       enable = true;
       defaultApplications = {
+        # Check https://codeshack.io/mime-type-lookup/
         "inode/directory" = "thunar.desktop";
         "image/*" = image-viewer;
         "text/plain" = text-editor;
