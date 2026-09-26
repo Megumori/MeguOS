@@ -8,6 +8,7 @@
   imports = [
     ./networking.nix
     ./packages.nix
+    ./mime.nix
     inputs.catppuccin.nixosModules.catppuccin
   ];
 

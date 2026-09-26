@@ -44,6 +44,7 @@
     #art
     krita
     inkscape
+    blender
 
     #Tech shenanigans
     moonlight-qt
