@@ -1,14 +1,11 @@
 {
-  description = "MeguFlake";
+  description = "Dendritic MeguFlake";
 
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-    }; # Maybe some day I actually do flake parts </3
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -46,77 +43,6 @@
 
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
-    {
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./root);
 
-      nixosConfigurations = {
-        # Different host machines listed as follows
-        # Remember to change the names accordingly, everywhere it says MeguPC and megumori
-        MeguPC = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            configName = "MeguPC";
-          };
-          modules = [
-            { networking.hostName = "MeguPC"; } # Standard set of base config, host config, user configs, and combo specifics
-            ./nixconfig
-            ./hosts/MeguPC
-            ./users/megumori
-            ./hosts/MeguPC/commonUsers/megumori
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                # For the home manager modules: user and combo specifics
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit inputs;
-                };
-                users.megumori.imports = [
-                  ./users/megumori/home
-                  ./hosts/MeguPC/commonUsers/megumori/home
-                ];
-              };
-            }
-          ];
-        };
-
-        MeguFW12 = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            configName = "MeguFW12";
-          };
-          modules = [
-            { networking.hostName = "MeguFW12"; }
-            ./nixconfig
-            ./hosts/MeguFW12
-            ./users/megumori
-            ./hosts/MeguFW12/commonUsers/megumori
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit inputs;
-                };
-                users.megumori.imports = [
-                  ./users/megumori/home
-                  ./hosts/MeguFW12/commonUsers/megumori/home
-                ];
-              };
-            }
-          ];
-        };
-
-      };
-
-    };
 }

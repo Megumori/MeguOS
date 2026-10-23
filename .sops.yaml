@@ -4,7 +4,7 @@ keys:
   - &host_megupc age176z4msxshcyrhvchyv7kd4h7gqagau4supm20ksc5rc8pclw9eqslcvlcw
   - &host_megufw12 age1e3hq7lneegfzq63kvzse3lmh0qprdyc34pwfvh0earjlqz8u33aq765jdj
 creation_rules:
-  - path_regex: secrets/megumori/.*
+  - path_regex: modules/users/megumori/secrets/.*
     key_groups:
     - age:
       - *user_megumoripc
