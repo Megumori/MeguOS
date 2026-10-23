@@ -6,12 +6,15 @@
 let
   username = "megumori";
   user = config.users.users.${username};
-  pythonEnv = pkgs.python314.withPackages (
-    python314Packages: with python314Packages; [
+  pythonEnv = pkgs.python3.withPackages (
+    pythonPackages: with pythonPackages; [
       ipykernel
       numpy
       scipy
+      sympy
       matplotlib
+      # These need testing
+      ipympl
     ]
   );
 in
@@ -23,7 +26,7 @@ in
 
     kernels = {
       python3 = {
-        displayName = "Python3.14 for uni science";
+        displayName = "Python3 for uni science";
         language = "python";
 
         argv = [
