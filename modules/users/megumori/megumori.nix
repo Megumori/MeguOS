@@ -11,10 +11,13 @@
     {
       imports = with self.nixosModules; [
         meguMime
+        terminal
+        { usernameForTerminal = "megumori"; }
       ];
       users.users.megumori = {
         isNormalUser = true;
-        description = "Megu :D";
+        description = "Megu colon capital D";
+        initialPassword = "salmiakki";
         extraGroups = [
           "networkmanager"
           "wheel"

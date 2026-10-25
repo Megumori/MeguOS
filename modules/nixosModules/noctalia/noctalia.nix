@@ -10,10 +10,43 @@
       ...
     }:
     {
-      imports = [ inputs.noctalian.nixosModules.default ];
-      programs.noctalia = {
-        enable = true;
-        package = self'.packages.noctalia-shell;
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
+    {
+      options = {
+        notificationMonitors = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          description = "Which monitors you want notifications on";
+          example = ''[ "eDP-1" ]'';
+        };
+        usernameForNoctalia = lib.mkOption {
+          type = lib.types.str;
+          description = "username";
+          example = "megumori";
+        };
+      };
+      config = {
+        users.users.${config.usernameForNoctalia}.packages = [
+          self'.packages.noctalia-shell
+          pkgs.nixos-icons
+          pkgs.cliphist
+          pkgs.xwayland-satellite
+        ];
+
+        systemd.user.services.noctalia = {
+          description = "Noctalia - A lightweight Wayland shell and bar";
+          documentation = [ "https://docs.noctalia.dev/noctalia/" ];
+          partOf = [ "graphical-session.target" ];
+          after = [ "graphical-session.target" ];
+          wantedBy = [ "graphical-session.target" ];
+          serviceConfig = {
+            ExecStart = lib.getExe self'.packages.noctalia-shell;
+            Restart = "on-failure";
+          };
+        };
       };
     }
   );
@@ -22,47 +55,12 @@
       pkgs,
       ...
     }:
-    { config, lib, ... }:
     {
-      options = {
-        notificationMonitors = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          description = "Which monitors you want notifications on";
-          example = ''[ "eDP-1" ]'';
-        };
-      };
-      config = {
-        packages.noctalia-shell = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
+      packages.noctalia-shell =
+        (inputs.wrappers.wrapperModules.noctalia.apply {
           inherit pkgs;
-
-          plugins = {
-            sources = [
-              {
-                enabled = true;
-                name = "Official Noctalia Plugins";
-                url = "https://github.com/noctalia-dev/noctalia-plugins";
-              }
-            ];
-            states = {
-              timer = {
-                enabled = true;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-              };
-              niri-overview-launcher = {
-                enabled = true;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-              };
-            };
-            version = 1;
-          };
-          pluginSettings = {
-            timer = {
-              compactMode = false;
-            };
-          };
-
           settings = {
-            bar = {
+            bar.main = {
               barType = "simple";
               position = "top";
               density = "default";
@@ -181,15 +179,15 @@
                     middleClickCommand = "pwvucontrol || pavucontrol";
                   }
 
-                  {
-                    id = "Network";
-                    displayMode = "onhover";
-                  }
-
-                  {
-                    id = "plugin:timer";
-                  }
-
+                  # {
+                  #   id = "Network";
+                  #   displayMode = "onhover";
+                  # }
+                  #
+                  # {
+                  #   id = "plugin:timer";
+                  # }
+                  #
                   {
                     id = "Battery";
                     deviceNativePath = "__default__";
@@ -317,8 +315,6 @@
               overlayLayer = true;
               backgroundOpacity = 0.5;
 
-              monitors = config.notificationMonitors;
-
               lowUrgencyDuration = 3;
               normalUrgencyDuration = 8;
               criticalUrgencyDuration = 15;
@@ -334,7 +330,6 @@
               fillColor = "#000000";
             };
           };
-        };
-      };
+        }).wrapper;
     };
 }

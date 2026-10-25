@@ -6,6 +6,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     wrapper-modules.url = "github:nix-community/nix-wrapper-modules";
+    wrappers.url = "github:Lassulus/wrappers";
 
     home-manager = {
       url = "github:nix-community/home-manager";

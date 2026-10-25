@@ -1,13 +1,13 @@
 {
-  flake.nixosModules.basilConfiguration = { pkgs, ... }: {
-    networking.hostname = "Basil";
+  flake.nixosModules.BasilConfiguration = { pkgs, ... }: {
+    networking.hostName = "Basil";
+    imports = [ ./_hardware-configuration.nix ];
 
     boot = {
 
       initrd = {
         # Needed to find the USB device during initrd stage
         kernelModules = [ "usb_storage" ];
-        systemd.enable = true; # Enables password fallback for the encrypted devices (maybe some other stuff too idk)
 
         luks.devices = {
           luksroot = {

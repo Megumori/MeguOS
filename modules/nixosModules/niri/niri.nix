@@ -1,39 +1,30 @@
 {
   inputs,
-  moduleWithSystem,
   ...
 }:
 {
-  flake.nixosModules.niri = moduleWithSystem (
-    {
-      self',
-      ...
-    }:
-    {
-      programs.niri = {
-        enable = true;
-        package = self'.packages.niri;
-      };
-    }
-  );
-  perSystem =
+  flake.nixosModules.niri =
     {
       pkgs,
+      config,
+      lib,
       ...
     }:
-    { config, lib, ... }:
     {
       options = {
         niriConfigPath = lib.mkOption {
           type = lib.types.path;
-          default = null;
           description = "Path to the config.kdl for your system/user";
+          example = "./config.kdl";
         };
       };
       config = {
-        packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
-          inherit pkgs;
-          "config.kdl".path = config.niriConfigPath;
+        programs.niri = {
+          enable = true;
+          package = inputs.wrapper-modules.wrappers.niri.wrap {
+            inherit pkgs;
+            "config.kdl".path = config.niriConfigPath;
+          };
         };
       };
     };
