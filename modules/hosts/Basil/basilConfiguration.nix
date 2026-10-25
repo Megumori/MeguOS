@@ -1,9 +1,6 @@
 {
-  ...
-}:
-{
-  flake.nixosModules.megupcConfiguration = { pkgs, ... }: {
-    networking.hostname = "MeguPC";
+  flake.nixosModules.basilConfiguration = { pkgs, ... }: {
+    networking.hostname = "Basil";
 
     boot = {
 
