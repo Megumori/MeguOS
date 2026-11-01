@@ -10,9 +10,8 @@
     }:
     {
       imports = with self.nixosModules; [
+        megumoriPackages
         meguMime
-        terminal
-        { usernameForTerminal = "megumori"; }
       ];
       users.users.megumori = {
         isNormalUser = true;
@@ -23,6 +22,8 @@
           "wheel"
         ];
       };
+      nixpkgs.config.allowUnfree = true;
+
       services.gnome.gnome-keyring.enable = true;
       users.users.megumori.packages = [ pkgs.seahorse ];
 

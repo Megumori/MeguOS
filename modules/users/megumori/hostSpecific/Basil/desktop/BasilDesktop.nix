@@ -3,20 +3,20 @@
   ...
 }:
 {
-  flake.nixosModules.megumoriBasilConfiguration =
+  flake.nixosModules.BasilDesktop =
     { modulesPath, ... }:
     {
       imports = with self.nixosModules; [
         # Temporary
-        {
-          imports = [ (modulesPath + "/virtualisation/qemu-vm.nix") ];
-          virtualisation.qemu.options = [
-            "-device"
-            "virtio-vga-gl"
-            "-display"
-            "sdl,gl=on"
-          ];
-        }
+        # {
+        #   imports = [ (modulesPath + "/virtualisation/qemu-vm.nix") ];
+        #   virtualisation.qemu.options = [
+        #     "-device"
+        #     "virtio-vga-gl"
+        #     "-display"
+        #     "sdl,gl=on"
+        #   ];
+        # }
         # sddm
         # kde
         niri

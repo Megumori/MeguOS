@@ -8,13 +8,16 @@
     system = "x86_64-linux";
     specialArgs = { inherit inputs; };
     modules = with self.nixosModules; [
-      BasilConfiguration
-      core
-      locale_gb_fi
+      homeManager
+      homeMegumori
 
-      # User specific configs
       megumori
       megumoriBasilConfiguration
+
+      BasilConfiguration
+      BasilDesktop
+      core
+      locale_gb_fi
     ];
   };
 }

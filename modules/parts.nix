@@ -1,6 +1,13 @@
 {
+  inputs,
+  ...
+}:
+{
+  imports = [
+    inputs.home-manager.flakeModules.home-manager # Apparently have to do this, vimjoyer guide says so :p
+  ];
   # Define what systems the modules are runnable on.
-  # Some pacakges may not have an aarch64 version, consult
+  # Some packages may not have an aarch64 version, consult
   # nixpkgs to check.
   config = {
     systems = [

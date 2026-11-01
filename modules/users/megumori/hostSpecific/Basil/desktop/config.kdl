@@ -149,7 +149,7 @@ binds {
     Mod+Shift+T { toggle-window-floating; }
     Mod+V { spawn "codium"; }
 }
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 spawn-at-startup "syncthing"
 spawn-at-startup "xwayland-satellite"
 
