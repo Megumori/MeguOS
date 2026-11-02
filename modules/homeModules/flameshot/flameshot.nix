@@ -6,7 +6,7 @@
       settings = {
         General = {
           # Settings can be found at https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
-          savePath = "${config.home.homeDirectory}/Media/Pictures/Screenshots";
+          savePath = "${config.home.homeDirectory}/Pictures/Screenshots";
           disabledTrayIcon = true;
           showStartupLaunchMessage = false;
           showDesktopNotification = true;

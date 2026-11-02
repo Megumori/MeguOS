@@ -1,10 +1,5 @@
 {
-  inputs,
-  ...
-}:
-{
   flake.nixosModules.meguMime =
-    { ... }:
     let
       browser = "zen-beta.desktop";
       file-browser = "thunar.desktop";

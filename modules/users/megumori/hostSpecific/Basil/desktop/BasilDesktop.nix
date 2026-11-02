@@ -3,29 +3,26 @@
   ...
 }:
 {
-  flake.nixosModules.BasilDesktop =
-    { modulesPath, ... }:
-    {
-      imports = with self.nixosModules; [
-        # Temporary
-        # {
-        #   imports = [ (modulesPath + "/virtualisation/qemu-vm.nix") ];
-        #   virtualisation.qemu.options = [
-        #     "-device"
-        #     "virtio-vga-gl"
-        #     "-display"
-        #     "sdl,gl=on"
-        #   ];
-        # }
-        # sddm
-        # kde
-        niri
-        { niriConfigPath = ./config.kdl; }
-        noctalia-shell
-        {
-          notificationMonitors = [ "HDMI-A-1" ];
-          usernameForNoctalia = "megumori";
-        }
+  flake.nixosModules.megumoriBasilDesktop = {
+    imports = with self.nixosModules; [
+      # sddm
+      # kde
+      niri
+      { niriConfigPath = ./config.kdl; }
+    ];
+    home-manager.users.megumori = {
+      imports = with self.homeModules; [
+        noctalia
       ];
+      modules = {
+        noctalia = {
+          enable = true;
+          font = "ComicCodeLigatures Nerd Font";
+          settings = {
+            notification.monitors = [ "HDMI-A-1" ];
+          };
+        };
+      };
     };
+  };
 }

@@ -13,9 +13,9 @@
 
       megumori
       megumoriBasilConfiguration
+      megumoriBasilDesktop
 
       BasilConfiguration
-      BasilDesktop
       core
       locale_gb_fi
     ];
