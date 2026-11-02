@@ -8,6 +8,7 @@
     home-manager.users.megumori = {
       imports = with self.homeModules; [
         megumoriPackages
+        megumoriTheming
       ];
       home = {
         username = "megumori";

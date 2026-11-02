@@ -142,7 +142,6 @@ binds {
 
     Mod+E { spawn "thunar"; }
     Mod+Z { spawn "zen-beta"; }
-    X { spawn "foot"; }
     Mod+Shift+S { spawn "flameshot" "gui"; }
     Mod+Space repeat=false { spawn "fuzzel"; }
     Mod+T { spawn "foot"; }

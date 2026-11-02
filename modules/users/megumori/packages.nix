@@ -8,6 +8,7 @@
       flameshotNiriXdg
 
       sddm
+      thunar
 
     ];
     users.users.megumori.packages = with pkgs; [
