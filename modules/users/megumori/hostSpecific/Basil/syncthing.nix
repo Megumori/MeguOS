@@ -4,11 +4,11 @@
       secrets = {
         stkey = {
           format = "binary";
-          sopsFile = ../../secrets/syncthing/_Basilkey.pem;
+          sopsFile = config.secrets.megumori.SyncthingBasilKey;
         };
         stcert = {
           format = "binary";
-          sopsFile = ../../secrets/syncthing/_Basilcert.pem;
+          sopsFile = config.secrets.megumori.SyncthingBasilCert;
         };
       };
     };

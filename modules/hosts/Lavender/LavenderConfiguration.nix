@@ -21,6 +21,7 @@
       nssmdns4 = true;
       openFirewall = true;
     };
+    zramSwap.enable = true;
 
     #Bluetooth
     hardware.bluetooth = {

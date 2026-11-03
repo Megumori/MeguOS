@@ -5,6 +5,7 @@
 {
   flake.nixosModules.megumoriPackages = { pkgs, ... }: {
     imports = with self.nixosModules; [
+      jupyter
       thunar
     ];
     users.users.megumori.packages = with pkgs; [

@@ -4,11 +4,11 @@
       secrets = {
         stkey = {
           format = "binary";
-          sopsFile = ../../secrets/syncthing/_Lavenderkey.pem;
+          sopsFile = config.secrets.megumori.LavenderSyncthingKey;
         };
         stcert = {
           format = "binary";
-          sopsFile = ../../secrets/syncthing/_Lavendercert.pem;
+          sopsFile = config.secrets.megumori.LavenderSyncthingCert;
         };
       };
     };

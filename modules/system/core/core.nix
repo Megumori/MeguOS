@@ -22,7 +22,6 @@
         "@wheel"
       ];
     };
-    zramSwap.enable = true;
 
   };
 }
