@@ -12,6 +12,7 @@
       imports = with self.nixosModules; [
         megumoriPackages
         meguMime
+        megumoriSddmIcon
       ];
       users.users.megumori = {
         isNormalUser = true;

@@ -5,11 +5,7 @@
 {
   flake.nixosModules.megumoriPackages = { pkgs, ... }: {
     imports = with self.nixosModules; [
-      flameshotNiriXdg
-
-      sddm
       thunar
-
     ];
     users.users.megumori.packages = with pkgs; [
 

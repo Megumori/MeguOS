@@ -12,11 +12,16 @@
       homeMegumori
 
       megumori
-      # megumoriLavenderConfiguration
+      megumoriLavenderConfiguration
+
+      sddm
+      {
+        modules.sddm = {
+          scale = 0.5;
+        };
+      }
 
       LavenderConfiguration
-      # BasilDesktop
-
       core
       printing
       locale_gb_fi

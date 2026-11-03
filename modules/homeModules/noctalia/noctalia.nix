@@ -163,6 +163,7 @@
               destructive = true;
             }
           ];
+
         };
 
         lockscreen = {
@@ -231,8 +232,6 @@
     in
     {
       options.modules.noctalia = {
-        enable = lib.mkEnableOption "Noctalia shell config";
-
         settings = lib.mkOption {
           description = "additional settings; overrides defaults";
           type = lib.custom.anythingWithMergeLists;
@@ -246,7 +245,7 @@
 
       };
 
-      config = lib.mkIf cfg.enable {
+      config = {
         modules.noctalia.settings = lib.custom.mkDefaultRecursive defaultSettings;
 
         systemd.user.services.noctalia = {

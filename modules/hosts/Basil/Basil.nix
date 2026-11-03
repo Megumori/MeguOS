@@ -13,7 +13,13 @@
 
       megumori
       megumoriBasilConfiguration
-      megumoriBasilDesktop
+
+      sddm
+      {
+        modules.sddm = {
+          scale = 0.5;
+        };
+      }
 
       BasilConfiguration
       core

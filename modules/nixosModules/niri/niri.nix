@@ -10,9 +10,12 @@
       lib,
       ...
     }:
+    let
+      cfg = config.modules.niri;
+    in
     {
       options = {
-        niriConfigPath = lib.mkOption {
+        modules.niri.configPath = lib.mkOption {
           type = lib.types.path;
           description = "Path to the config.kdl for your system/user";
           example = "./config.kdl";
@@ -23,7 +26,7 @@
           enable = true;
           package = inputs.wrapper-modules.wrappers.niri.wrap {
             inherit pkgs;
-            "config.kdl".path = config.niriConfigPath;
+            "config.kdl".path = cfg.configPath;
           };
         };
       };
