@@ -13,6 +13,7 @@
         megumoriPackages
         meguMime
         megumoriSddmIcon
+        megumoriAssets
       ];
       users.users.megumori = {
         isNormalUser = true;

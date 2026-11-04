@@ -14,6 +14,7 @@
       cfg = config.modules.noctalia;
       defaultSettings = {
         theme = {
+          mode = "dark";
           source = "builtin";
           builtin = "Catppuccin";
         };
@@ -135,7 +136,7 @@
         };
 
         shell = {
-          avatar_path = "${config.home.homeDirectory}/.face";
+          avatar_path = cfg.avatarPath;
 
           screen_corners.enabled = true;
           launch_apps_as_systemd_services = true;
@@ -219,7 +220,7 @@
         };
 
         wallpaper = {
-          directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
+          directory = cfg.wallpaperDirPath;
 
           fill_color = "#000000";
         };
@@ -241,6 +242,16 @@
           description = "What font to use in the shell";
           type = lib.types.str;
           default = "sans-serif";
+        };
+        avatarPath = lib.mkOption {
+          description = "Path to your avatar";
+          type = lib.types.path;
+          default = "${config.home.homeDirectory}/.face";
+        };
+        wallpaperDirPath = lib.mkOption {
+          description = "Path to your wallpapers";
+          type = lib.types.path;
+          default = "${config.home.homeDirectory}/Pictures/Wallpapers";
         };
 
       };
