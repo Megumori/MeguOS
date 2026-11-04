@@ -8,6 +8,7 @@
     system = "x86_64-linux";
     specialArgs = { inherit inputs; };
     modules = with self.nixosModules; [
+      { networking.hostName = "Lavender"; }
       homeManager
       homeMegumori
 

@@ -1,6 +1,5 @@
 {
   flake.nixosModules.BasilConfiguration = { pkgs, ... }: {
-    networking.hostName = "Basil";
     imports = [ ./_hardware-configuration.nix ];
 
     boot = {
