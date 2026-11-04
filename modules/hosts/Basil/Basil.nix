@@ -23,6 +23,7 @@
 
       BasilConfiguration
       core
+      sops
       locale_gb_fi
     ];
   };

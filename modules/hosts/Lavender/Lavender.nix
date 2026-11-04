@@ -23,6 +23,7 @@
 
       LavenderConfiguration
       core
+      sops
       printing
       locale_gb_fi
     ];

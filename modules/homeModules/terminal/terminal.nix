@@ -32,6 +32,7 @@
 
           ];
         };
+        man.generateCaches = false;
         starship = {
           enable = true;
           enableFishIntegration = true;
