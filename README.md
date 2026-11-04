@@ -1,3 +1,8 @@
+# Notice
+
+This is a now archived version of my config, wanted to still have it be easily visible rather than making people go through commit history.
+Enjoy :D
+
 # General structure:
 
 ## flake.nix
